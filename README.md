@@ -1,2 +1,2 @@
 # find-core-game
-Our project
+Our project is cool!!
