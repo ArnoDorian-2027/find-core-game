@@ -1,2 +1,2 @@
 # find-core-game
-Our project is cool!!
+    Это наша игра, созданная на Unity
