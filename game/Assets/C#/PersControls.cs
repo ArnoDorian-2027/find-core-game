@@ -5,13 +5,10 @@ using TMPro;
 public class PersControls : MonoBehaviour
 {
     public List<Vector3> SpawnPoints;
-    public GameObject PauseMenu, Game;
-    public float Movespeed, Rotspeed;
-    public TextMeshProUGUI Subtitles;
-
+    [SerializeField] GameObject PauseMenu, Game;
+    [SerializeField] float Movespeed, Rotspeed;
     int AnimState = 0;
     bool isSpawn = false;
-
     Camera Cam;
     private void Start()
     {
@@ -28,12 +25,11 @@ public class PersControls : MonoBehaviour
     }//Анимации, проверка кнопок взаимодействия
     void FixedUpdate()
     {
-        float sx = Rotspeed * AnimState;
-      
-        if (Input.GetKey(KeyCode.W)) { this.transform.Translate(Vector3.right * Movespeed * AnimState * Time.deltaTime); }
-        if (Input.GetKey(KeyCode.S)) { this.transform.Translate(-Vector3.right * Movespeed * AnimState * Time.deltaTime); }
-        if (Input.GetKey(KeyCode.A)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y - sx, this.transform.rotation.z * Time.deltaTime); }
-        if (Input.GetKey(KeyCode.D)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y + sx, this.transform.rotation.z * Time.deltaTime); }       
+
+        if (Input.GetKey(KeyCode.W)) { this.transform.Translate(Vector3.right * Movespeed * AnimState * Time.fixedDeltaTime); }
+        if (Input.GetKey(KeyCode.S)) { this.transform.Translate(-Vector3.right * Movespeed * AnimState * Time.fixedDeltaTime); }
+        if (Input.GetKey(KeyCode.A)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y - Rotspeed * AnimState, this.transform.rotation.z * Time.fixedDeltaTime); }
+        if (Input.GetKey(KeyCode.D)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y + Rotspeed * AnimState, this.transform.rotation.z * Time.fixedDeltaTime); }       
     }//Движения
 
     

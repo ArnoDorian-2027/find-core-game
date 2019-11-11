@@ -17,16 +17,19 @@ public class DialogScript : MonoBehaviour
     [TextArea(3,100)]
     [SerializeField] string[] words;
     int i = 0;
-    bool used_st = false;
+    private bool used_st = false, used_repl = false;
     #endregion
+    
     public IEnumerator Write(string str, float delay, TextMeshProUGUI text)
     {
+        used_repl = false;
         text.text = "";
         for (int i = 0; i < str.Length; i++)
         { 
             text.text += str[i];
             yield return new WaitForSeconds(delay);
         }
+        used_repl = true;
     }
     void Outside()
     {
@@ -40,7 +43,7 @@ public class DialogScript : MonoBehaviour
         im.sprite = PersCard[i].Image;
         replic.text = words[i];
         StartCoroutine(Write(words[i], WordDelay, replic));
-        Debug.Log("i :: " + i);
+        //Debug.Log("i :: " + i);
         i++;
     }
     private void OnTriggerEnter() 
@@ -54,7 +57,7 @@ public class DialogScript : MonoBehaviour
     }    
     private void OnTriggerStay()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && used_st == false)
+        if (Input.GetKeyUp(KeyCode.Space) && !used_st && used_repl)
         {
             //Debug.Log("PRESS :: i :: " + i);
             if (i >= PersCard.Length) { Outside(); }
