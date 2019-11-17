@@ -17,53 +17,48 @@ public class DialogScript : MonoBehaviour
     [TextArea(3,100)]
     [SerializeField] string[] words;
     int i = 0;
-    private bool used_st = false, used_repl = false;
+    private bool used_repl = true;
     #endregion
     
-    public IEnumerator Write(string str, float delay, TextMeshProUGUI text)
+    public IEnumerator Write(string str, TextMeshProUGUI text)
     {
         used_repl = false;
         text.text = "";
         for (int i = 0; i < str.Length; i++)
         { 
             text.text += str[i];
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(WordDelay);
         }
+        yield return new WaitForSeconds(WordDelay);
         used_repl = true;
     }
     void Outside()
     {
         anim.SetBool("isOpen", false);
         p_controler.enabled = true;
-        used_st = true;
+        Destroy(this);
     }
     void NextReplic() 
     {
         Name.text = PersCard[i].Name;
         im.sprite = PersCard[i].Image;
         replic.text = words[i];
-        StartCoroutine(Write(words[i], WordDelay, replic));
-        //Debug.Log("i :: " + i);
+        StartCoroutine(Write(words[i], replic));
         i++;
     }
     private void OnTriggerEnter() 
     {
-        if (used_st == false)
-        {
-            anim.SetBool("isOpen", true);
-            p_controler.enabled = false;  // Нет движений
-            NextReplic();   
-        } 
+        anim.SetBool("isOpen", true);
+        p_controler.enabled = false;  
+        NextReplic();   
     }    
     private void OnTriggerStay()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && !used_st && used_repl)
+        if (Input.GetKeyUp(KeyCode.Space) && used_repl)
         {
-            //Debug.Log("PRESS :: i :: " + i);
             if (i >= PersCard.Length) { Outside(); }
             if (i < PersCard.Length) { NextReplic();  }
             
         } 
     }  
 }
-

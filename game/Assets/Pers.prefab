@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1244525204324953417}
   - component: {fileID: 1244525204324953416}
   - component: {fileID: 1244525204324953423}
+  - component: {fileID: 2456730052646851327}
   - component: {fileID: 1244525204324953419}
   - component: {fileID: 1244525204324953418}
-  - component: {fileID: 2456730052646851327}
   m_Layer: 0
   m_Name: Pers
   m_TagString: Untagged
@@ -98,6 +98,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &2456730052646851327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244525204324953413}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6609001, y: 0.21037877, z: 1.5774155}
+  m_Center: {x: -0.0034809113, y: 0.39481074, z: -0.003490448}
 --- !u!65 &1244525204324953419
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -128,17 +141,3 @@ MonoBehaviour:
   Game: {fileID: 0}
   Movespeed: 1
   Rotspeed: 1
-  Subtitles: {fileID: 0}
---- !u!65 &2456730052646851327
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244525204324953413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6609001, y: 0.21037877, z: 1.5774155}
-  m_Center: {x: -0.0034809113, y: 0.39481074, z: -0.003490448}
