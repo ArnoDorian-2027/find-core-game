@@ -8,15 +8,17 @@ using TMPro;
 public class DialogScript : MonoBehaviour
 {  
     #region Initalize 
-    [SerializeField] PersControls p_controler;
-    [SerializeField] Animator anim;
-    [SerializeField] Image im;
-    [SerializeField] TextMeshProUGUI replic, Name;
+    [SerializeField] PersControls p_controler = null;
+    [SerializeField] Animator anim = null;
+    [SerializeField] Image im = null;
+    [SerializeField] TextMeshProUGUI replic = null, Name = null;
     [SerializeField] float WordDelay = 0.08f;
     [SerializeField] PersCard[] PersCard;
     [TextArea(3,100)]
     [SerializeField] string[] words;
-    int i = 0;
+    [SerializeField] bool UseDoor = false;
+    [SerializeField] DoorController doorManager = null;
+    private int i = 0;
     private bool used_repl = true;
     #endregion
     
@@ -37,6 +39,8 @@ public class DialogScript : MonoBehaviour
         anim.SetBool("isOpen", false);
         p_controler.enabled = true;
         Destroy(this);
+        Destroy(this.gameObject);
+        doorManager.USEFULLY = true;
     }
     void NextReplic() 
     {
@@ -58,7 +62,6 @@ public class DialogScript : MonoBehaviour
         {
             if (i >= PersCard.Length) { Outside(); }
             if (i < PersCard.Length) { NextReplic();  }
-            
         } 
     }  
 }

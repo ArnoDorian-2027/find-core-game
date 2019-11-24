@@ -7,40 +7,15 @@ using System.Text;
 using TMPro;
 public class SystemsQuiz : MonoBehaviour
 {
+    
     #region  options
-        [Header("Sum / Raz Settings")]
-        public _Preset _Preset;
-        [SerializeField] bool _usepreset = false;
-        [Header("Q1")]
-        [SerializeField] bool randomizeQ1 = false; 
-        [Range(2,16)][SerializeField] int Q1 = 2;
-        [Header("Q2")][SerializeField] bool randomizeQ2 = false;
-        [Range(2,16)][SerializeField] int Q2 = 2;
-        [Header("Q3")]
-        [SerializeField] bool randomizeQ3 = false;
-        [Range(2,16)][SerializeField] int Q3 = 10;
-        [Header("Nums")]
-        [SerializeField] bool randomizenums = false;
-        [Range(2,16)][SerializeField] int maxlength = 3;
-        [SerializeField] string number_1 = "0", number_2 = "0";
-        [Header("Transform Settings")]
-        [SerializeField] Preset Profile;
-        [SerializeField] bool usepreset = false;
         [Range(2,16)][SerializeField] int q1 = 2, q2 = 8, length = 3;
         [Header("Transform Answers")]
         public string answ_q1 = "", answ_q2 = "";
-        [Header("Sum / Raz Answers")]
-        [SerializeField] bool sum = false;
-        public string answ_sum = "";
-        [SerializeField] bool raz = false;
-        public string answ_raz = "";
-    #endregion
-    
-    #region 1
         [Header("SETTINGS")]
-        public TextMeshProUGUI text;
+        [SerializeField] TextMeshProUGUI text;
+        [SerializeField] string[] task, reqest;
     #endregion
-
     public string Generate(int sy, int len)
     {  
         StringBuilder s = new StringBuilder();
@@ -169,50 +144,24 @@ public class SystemsQuiz : MonoBehaviour
         //Debug.Log(System.Convert.ToInt16(n1) + " - " + System.Convert.ToInt16(n2) + " = " + n3);
         return Transform(n3.ToString(), 10, q3_); 
     }
-    void UpdateSettings() 
-    {
-        if (_Preset != null && _usepreset == true)
-        {
-            if (_Preset.randQ1) { Q1 = Random.Range(_Preset.minQ1, _Preset.maxQ1); }
-            else { Q1 = _Preset.Q1; }
-            if (_Preset.randQ2) { Q2 = Random.Range(_Preset.minQ2, _Preset.maxQ2); }
-            else { Q2 = _Preset.Q2; }
-            if (_Preset.randQ1) { Q3 = Random.Range(_Preset.minQ3, _Preset.maxQ3); }
-            else { Q3 = _Preset.Q3; }
-            if (_Preset.randlength) { length = Random.Range(_Preset.minlength, _Preset.maxlength); }
-            else { length = _Preset.length; }
-        }
-        if (Profile != null && usepreset == true) 
-        {   if (Profile.q1_randomizer) { q1 = Random.Range(Profile.min_q1,Profile.max_q1); }
-                else { q1 = Profile.q1; } 
-            if (Profile.q2_randomizer) { q2 = Random.Range(Profile.min_q2,Profile.max_q2); }
-                else { q2 = Profile.q2; } 
-            if (Profile.leng_randomizer) { length = Random.Range(Profile.min_leng, Profile.max_leng); }
-                else { length = Profile.leng; } 
-        }
-    }
     public void Next() 
     {      
-        UpdateSettings();
-        number_1 = Generate(Q1, Random.Range(2, maxlength));
-        number_2 = Generate(Q2, Random.Range(2, maxlength));
         answ_q1 = Generate(q1,length);
         answ_q2 = Transform(answ_q1,q1,q2); 
     }
-    public void checker(TMP_InputField tt)
+    public void checker(TMP_InputField texxt)
     {
-        if (tt.text == answ_q2) 
+        if (texxt.text == answ_q2) 
         { 
             Debug.Log("True!"); 
-            tt.text = ""; 
-            Next(); 
+            texxt.text = ""; 
         } 
         else 
         { 
             Debug.Log("False!"); 
-            tt.text = ""; 
-            Next(); 
+            texxt.text = ""; 
         } 
+        Next();
     }
     private void Start() 
     {
@@ -220,8 +169,6 @@ public class SystemsQuiz : MonoBehaviour
     }
     private void Update() 
     {
-        if (sum) { answ_sum = Summer(number_1, number_2, Q1, Q2, Q3); } 
-        if (raz) { answ_raz = Raznos(number_1, number_2, Q1, Q2, Q3); } 
         text.text = "Переведите " + answ_q1.ToString() + " из " + q1.ToString() + " - ричной в " + q2.ToString() + " - ую"; 
     }
 }
