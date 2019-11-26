@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2667,6 +2667,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1416163824}
     m_Modifications:
+    - target: {fileID: 8113410070759728647, guid: 16d1aaa3995f5a947b94ace9de3e926a,
+        type: 3}
+      propertyPath: m_Name
+      value: dune-3
+      objectReference: {fileID: 0}
     - target: {fileID: 5099137601917621268, guid: 16d1aaa3995f5a947b94ace9de3e926a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2721,11 +2726,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8113410070759728647, guid: 16d1aaa3995f5a947b94ace9de3e926a,
-        type: 3}
-      propertyPath: m_Name
-      value: dune-3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16d1aaa3995f5a947b94ace9de3e926a, type: 3}
@@ -8932,6 +8932,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244525204324953422, guid: 9687352c16e05354bb2ab37e13c3f7f6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244525204324953422, guid: 9687352c16e05354bb2ab37e13c3f7f6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244525204324953422, guid: 9687352c16e05354bb2ab37e13c3f7f6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1244525204324953418, guid: 9687352c16e05354bb2ab37e13c3f7f6,
         type: 3}

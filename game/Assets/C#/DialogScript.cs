@@ -18,6 +18,8 @@ public class DialogScript : MonoBehaviour
     [SerializeField] string[] words;
     [SerializeField] bool UseDoor = false;
     [SerializeField] DoorController doorManager = null;
+    [SerializeField] bool UseSceneChanger = false;
+    [SerializeField] SceneChanger sc_changer = null;
     private int i = 0;
     private bool used_repl = true;
     #endregion
@@ -40,7 +42,8 @@ public class DialogScript : MonoBehaviour
         p_controler.enabled = true;
         Destroy(this);
         Destroy(this.gameObject);
-        doorManager.USEFULLY = true;
+        if (UseDoor == true) { doorManager.USEFULLY = true; }
+        if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
     }
     void NextReplic() 
     {

@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private int ID = 0;
-    public bool USEFUL = false;
+    public bool USEFULLY = false;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && USEFUL == true)  
+        if (other.gameObject.tag == "Player" && USEFULLY == true)  
         {
-            StartCoroutine(change(1));
+            StartCoroutine(change(0.2f));
         }
     }
     IEnumerator change(float delay)

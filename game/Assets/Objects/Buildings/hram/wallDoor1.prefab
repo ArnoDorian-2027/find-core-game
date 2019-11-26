@@ -137,7 +137,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: {fileID: 1369580103082134434}
   isL: 1
-  USEFULLY: 0
 --- !u!1 &7146574339764801853
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,8 +149,8 @@ GameObject:
   - component: {fileID: 8945161260456997895}
   - component: {fileID: 5676613801284069195}
   - component: {fileID: 1287441898742333908}
-  - component: {fileID: 1369580103082134434}
   - component: {fileID: 2029684522160092302}
+  - component: {fileID: 1369580103082134434}
   m_Layer: 0
   m_Name: wallDoor1
   m_TagString: Untagged
@@ -216,22 +215,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9184407, y: 4.0565023, z: 2.00318}
   m_Center: {x: -0.8457981, y: 4.9788566, z: 4.362644}
---- !u!114 &1369580103082134434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7146574339764801853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14fc5803e71a844aaadca05adb17de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TwiseUsing: 0
-  L: 0
-  R: 0
-  animator: {fileID: 4599729007518449460}
 --- !u!65 &2029684522160092302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -245,6 +228,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4477012, y: 1.9928646, z: 2.5670004}
   m_Center: {x: -0.82519615, y: 1.0259593, z: 4.3870354}
+--- !u!114 &1369580103082134434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7146574339764801853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14fc5803e71a844aaadca05adb17de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L: 0
+  R: 0
+  USEFULLY: 0
+  TwiseUsing: 0
+  animator: {fileID: 4599729007518449460}
 --- !u!1 &7682758704142652788
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: {fileID: 1369580103082134434}
   isL: 0
-  USEFULLY: 0
 --- !u!1001 &5304441536706945647
 PrefabInstance:
   m_ObjectHideFlags: 0
