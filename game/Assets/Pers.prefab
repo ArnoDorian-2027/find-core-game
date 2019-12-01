@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4902828844450548561}
   m_Layer: 0
   m_Name: Pers
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
   Rotspeed: 60
   invert_move: 1
   invert_rot: 0
+  AnimState: 0
+  blockmove: 0
 --- !u!95 &4902828844450548561
 Animator:
   serializedVersion: 3

@@ -28,7 +28,7 @@ public class DialogScript : MonoBehaviour
     
     void Start()
     {
-        theother.SetActive(false);
+        if (twisedialog == true) { theother.SetActive(false); } 
     }
     public IEnumerator Write(string str, TextMeshProUGUI text)
     {
@@ -45,7 +45,7 @@ public class DialogScript : MonoBehaviour
     void Outside()
     {
         anim.SetBool("isOpen", false);
-        p_controler.enabled = true;
+        p_controler.blockmove = false;
         if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
         else { Destroy(this); }
         //Destroy(this.gameObject);
@@ -62,9 +62,10 @@ public class DialogScript : MonoBehaviour
     }
     private void OnTriggerEnter() 
     {
+        p_controler.AnimState = 0;
+        p_controler.blockmove = true;
         anim.SetBool("isOpen", true);
-        p_controler.enabled = false;  
-        NextReplic();   
+        NextReplic();  
     }    
     private void OnTriggerStay()
     {

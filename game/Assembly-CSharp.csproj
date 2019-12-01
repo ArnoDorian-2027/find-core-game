@@ -59,6 +59,7 @@
      <Compile Include="Assets\C#\SP_ADD.cs" />
      <Compile Include="Assets\C#\StoryMaker.cs" />
      <Compile Include="Assets\C#\SystemsQuiz.cs" />
+     <Compile Include="Assets\C#\TargetAnim.cs" />
      <Compile Include="Assets\C#\UI_.cs" />
      <None Include="Assets\Other\Imports\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Other\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

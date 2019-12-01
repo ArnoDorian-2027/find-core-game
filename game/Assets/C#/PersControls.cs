@@ -8,7 +8,8 @@ public class PersControls : MonoBehaviour
     [SerializeField] float Movespeed, Rotspeed;
     [SerializeField] bool invert_move = false, invert_rot = false;
     float current_speed = 0f;
-    int AnimState = 0;
+    public int AnimState = 0;
+    public bool blockmove = false;
     bool isSpawn = false;
     Animator animator;
     Camera Cam;
@@ -19,12 +20,13 @@ public class PersControls : MonoBehaviour
         { animator = this.GetComponent<Animator>(); } else { Debug.LogError("Animator not found at " + this.gameObject); }
     }
     private void Update()
-    {
-        
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
+    {  
+        float x = 0f, z = 0f;
+        if (blockmove == false)
+        {
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
+        }
         if (Mathf.Abs(z) > 0.4 && Input.GetKey(KeyCode.LeftShift))
         { AnimState = 2; } 
         else
