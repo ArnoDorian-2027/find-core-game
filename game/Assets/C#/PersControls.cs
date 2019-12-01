@@ -5,32 +5,49 @@ using TMPro;
 public class PersControls : MonoBehaviour
 {
     public List<Vector3> SpawnPoints;
-    [SerializeField] GameObject PauseMenu, Game;
     [SerializeField] float Movespeed, Rotspeed;
+    [SerializeField] bool invert_move = false, invert_rot = false;
+    float current_speed = 0f;
     int AnimState = 0;
     bool isSpawn = false;
+    Animator animator;
     Camera Cam;
     private void Start()
     {
         Cam = Camera.main;
+        if (this.GetComponent<Animator>() != null)  
+        { animator = this.GetComponent<Animator>(); } else { Debug.LogError("Animator not found at " + this.gameObject); }
     }
     private void Update()
     {
-        if (isSpawn == false && SpawnPoints.Capacity > 0) { this.transform.position = SpawnPoints[Random.Range(0, SpawnPoints.Count - 1)]; isSpawn = true; SpawnPoints.Clear(); }
+        
 
-        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && Input.GetKey(KeyCode.LeftShift)) { AnimState = 2; }
-        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) { AnimState = 1; } else { AnimState = 0; }
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.Escape)) { Cam.GetComponent<CameraZoom>().enabled = false; this.GetComponent<PersControls>().enabled = false; Game.SetActive(false); PauseMenu.SetActive(true); }
-    }//Анимации, проверка кнопок взаимодействия
-    void FixedUpdate()
-    {
+        if (Mathf.Abs(z) > 0.4 && Input.GetKey(KeyCode.LeftShift))
+        { AnimState = 2; } 
+        else
+        {
+            if (Mathf.Abs(z) > 0.4 && !Input.GetKey(KeyCode.LeftShift))
+            { AnimState = 1; }  
+            else
+            {
+                if (Mathf.Abs(z) < 0.4 && !Input.GetKeyDown(KeyCode.LeftShift))
+                { AnimState = 0; }  
+            }
+            
+        }
 
-        if (Input.GetKey(KeyCode.W)) { this.transform.Translate(Vector3.right * Movespeed * AnimState * Time.fixedDeltaTime); }
-        if (Input.GetKey(KeyCode.S)) { this.transform.Translate(-Vector3.right * Movespeed * AnimState * Time.fixedDeltaTime); }
-        if (Input.GetKey(KeyCode.A)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y - Rotspeed * AnimState, this.transform.rotation.z * Time.fixedDeltaTime); }
-        if (Input.GetKey(KeyCode.D)) { this.transform.Rotate(this.transform.rotation.x, this.transform.rotation.y + Rotspeed * AnimState, this.transform.rotation.z * Time.fixedDeltaTime); }       
-    }//Движения
+        if (invert_move == false) { this.transform.Translate(Movespeed * AnimState * Time.fixedDeltaTime * z, 0f, 0f); }
+            else { this.transform.Translate(Movespeed * Time.fixedDeltaTime * -z, 0f, 0f); }
+
+        if (invert_rot == false) { this.transform.Rotate(0f, Time.fixedDeltaTime * Rotspeed * x, 0f); }
+            else { this.transform.Rotate(0f, Time.fixedDeltaTime * AnimState * Rotspeed * -x, 0f); }
+
+        animator.SetInteger("AnimState", AnimState);
+    }//Анимации, движения
+    
 
     
 }
