@@ -20,10 +20,16 @@ public class DialogScript : MonoBehaviour
     [SerializeField] DoorController doorManager = null;
     [SerializeField] bool UseSceneChanger = false;
     [SerializeField] SceneChanger sc_changer = null;
+    [SerializeField] bool twisedialog = false;
+    [SerializeField] GameObject theother = null;
     private int i = 0;
     private bool used_repl = true;
     #endregion
     
+    void Start()
+    {
+        theother.SetActive(false);
+    }
     public IEnumerator Write(string str, TextMeshProUGUI text)
     {
         used_repl = false;
@@ -40,8 +46,9 @@ public class DialogScript : MonoBehaviour
     {
         anim.SetBool("isOpen", false);
         p_controler.enabled = true;
-        Destroy(this);
-        Destroy(this.gameObject);
+        if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
+        else { Destroy(this); }
+        //Destroy(this.gameObject);
         if (UseDoor == true) { doorManager.USEFULLY = true; }
         if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
     }
