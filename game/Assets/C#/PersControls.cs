@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 public class PersControls : MonoBehaviour
 {
+    
     public List<Vector3> SpawnPoints;
     [SerializeField] float Movespeed, Rotspeed;
     [SerializeField] bool invert_move = false, invert_rot = false;

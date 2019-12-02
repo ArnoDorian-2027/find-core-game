@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public bool L, R, USEFULLY = false;
+    public bool L = false, R = false, USEFULLY = false;
     [SerializeField] bool TwiseUsing = false;
     [SerializeField] private Animator animator;
     void OnTriggerEnter(Collider other)

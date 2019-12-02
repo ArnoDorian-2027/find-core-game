@@ -45,14 +45,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>     <Compile Include="Assets\C#\CadSceneController.cs" />
-     <Compile Include="Assets\C#\Camera\CamControl.cs" />
-     <Compile Include="Assets\C#\Camera\CameraLockAt.cs" />
-     <Compile Include="Assets\C#\Camera\CameraZoom.cs" />
+     <Compile Include="Assets\C#\CamControl.cs" />
+     <Compile Include="Assets\C#\CameraLockAt.cs" />
+     <Compile Include="Assets\C#\CameraZoom.cs" />
      <Compile Include="Assets\C#\DEC_ADD.cs" />
      <Compile Include="Assets\C#\DialogScript.cs" />
      <Compile Include="Assets\C#\DoorController.cs" />
      <Compile Include="Assets\C#\Go.cs" />
      <Compile Include="Assets\C#\L_R_DoorController.cs" />
+     <Compile Include="Assets\C#\Lerp.cs" />
      <Compile Include="Assets\C#\PersCard.cs" />
      <Compile Include="Assets\C#\PersControls.cs" />
      <Compile Include="Assets\C#\SceneChanger.cs" />

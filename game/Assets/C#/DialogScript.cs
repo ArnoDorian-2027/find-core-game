@@ -12,23 +12,27 @@ public class DialogScript : MonoBehaviour
     [SerializeField] Animator anim = null;
     [SerializeField] Image im = null;
     [SerializeField] TextMeshProUGUI replic = null, Name = null;
-    [SerializeField] float WordDelay = 0.08f;
+    [SerializeField] float WordDelay = 0f;
+    public bool USEFULLY = false;
     [SerializeField] PersCard[] PersCard;
-    [TextArea(3,100)]
-    [SerializeField] string[] words;
+    [TextArea(3,100)][SerializeField] string[] words;
     [SerializeField] bool UseDoor = false;
     [SerializeField] DoorController doorManager = null;
     [SerializeField] bool UseSceneChanger = false;
     [SerializeField] SceneChanger sc_changer = null;
     [SerializeField] bool twisedialog = false;
     [SerializeField] GameObject theother = null;
+    [SerializeField] bool Del = false;
+    [SerializeField] GameObject Delete = null;
+    [SerializeField] bool LerpUse = false;
+    [SerializeField] Lerp Lerp = null;
     private int i = 0;
     private bool used_repl = true;
     #endregion
     
-    void Start()
+    private void Update() 
     {
-        if (twisedialog == true) { theother.SetActive(false); } 
+        if (Input.GetKeyDown(KeyCode.T) && Input.GetKeyDown(KeyCode.G) && USEFULLY) { Outside(); }
     }
     public IEnumerator Write(string str, TextMeshProUGUI text)
     {
@@ -44,13 +48,19 @@ public class DialogScript : MonoBehaviour
     }
     void Outside()
     {
-        anim.SetBool("isOpen", false);
-        p_controler.blockmove = false;
-        if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
-        else { Destroy(this); }
-        //Destroy(this.gameObject);
-        if (UseDoor == true) { doorManager.USEFULLY = true; }
-        if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
+        if (USEFULLY)
+        {
+            anim.SetBool("isOpen", false);
+            p_controler.blockmove = false;
+            if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
+            else { Destroy(this); }
+            //Destroy(this.gameObject);
+            if (UseDoor == true) { doorManager.USEFULLY = true; }
+            if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
+            if (Del == true) { Destroy(Delete); }
+            if (LerpUse == true) { Lerp.USEFULLY = true; }
+        }
+        
     }
     void NextReplic() 
     {
@@ -62,17 +72,24 @@ public class DialogScript : MonoBehaviour
     }
     private void OnTriggerEnter() 
     {
-        p_controler.AnimState = 0;
-        p_controler.blockmove = true;
-        anim.SetBool("isOpen", true);
-        NextReplic();  
+        if (USEFULLY == true)
+        {
+            p_controler.AnimState = 0;
+            p_controler.blockmove = true;
+            anim.SetBool("isOpen", true);
+            NextReplic();  
+        }
+        
     }    
     private void OnTriggerStay()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && used_repl)
+        if (USEFULLY == true)
         {
-            if (i >= PersCard.Length) { Outside(); }
-            if (i < PersCard.Length) { NextReplic();  }
-        } 
+            if (Input.GetKeyUp(KeyCode.Space) && used_repl)
+            {
+                if (i >= PersCard.Length) { Outside(); }
+                if (i < PersCard.Length) { NextReplic();  }
+            } 
+        }
     }  
 }
