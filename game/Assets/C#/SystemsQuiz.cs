@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
-
+using System.IO;
 using TMPro;
+
 public class SystemsQuiz : MonoBehaviour
 {
     
     #region  options
-        [Range(2,16)][SerializeField] int q1 = 2, q2 = 8, length = 3;
-        [Header("Transform Answers")]
-        public string answ_q1 = "", answ_q2 = "";
+        [SerializeField] string NAME = "Вова Ерохин";
+        [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, q3 = 10, transformQ = 10, length = 3;
+        [TextArea(1,1)][SerializeField] string NUM1 = null, NUM2 = null;
+        [SerializeField] bool sum = false;
+        public string answ_q1 = "", answ_q2 = "", answ_sum_q3 = "";
         [Header("SETTINGS")]
         [SerializeField] TextMeshProUGUI text;
-        [SerializeField] string[] task, reqest;
+        string task = null;
     #endregion
+
     public string Generate(int sy, int len)
     {  
         StringBuilder s = new StringBuilder();
@@ -96,7 +100,6 @@ public class SystemsQuiz : MonoBehaviour
                 case 13: { s = new StringBuilder("D" + s.ToString()); break; }
                 case 14: { s = new StringBuilder("E" + s.ToString()); break; }
                 case 15: { s = new StringBuilder("F" + s.ToString()); break; }
-               
             }    
             //Debug.Log(figure + "%" + q2_ + " = s :: " + s.ToString()); 
             figure = figure / q2_;
@@ -130,45 +133,42 @@ public class SystemsQuiz : MonoBehaviour
         string n2 = Transform(num2,q2_,10);
         //Debug.Log(n2 + " :: " + num2);
         int n3 = System.Convert.ToInt16(n1) + System.Convert.ToInt16(n2);
-        //Debug.Log(System.Convert.ToInt16(n1) + " + " + System.Convert.ToInt16(n2) + " = " + n3);
+        Debug.Log(System.Convert.ToInt16(n1) + " + " + System.Convert.ToInt16(n2) + " = " + n3);
         return Transform(n3.ToString(), 10, q3_);
-    }
-    public string Raznos(string num1, string num2, int q1_,int q2_, int q3_)
-    {
-        string n1 = Transform(num1,q1_,10);
-        //Debug.Log(n1 + " :: " + num1);
-        string n2 = Transform(num2,q2_,10);
-        //Debug.Log(n2 + " :: " + num2);
-        int n3 = System.Convert.ToInt16(n1) - System.Convert.ToInt16(n2);
-        if (n3 < 0) { return "<0!"; } 
-        //Debug.Log(System.Convert.ToInt16(n1) + " - " + System.Convert.ToInt16(n2) + " = " + n3);
-        return Transform(n3.ToString(), 10, q3_); 
     }
     public void Next() 
     {      
-        answ_q1 = Generate(q1,length);
-        answ_q2 = Transform(answ_q1,q1,q2); 
-    }
+        if (NUM1 != null) { answ_q1 = Generate(transformQ,length); }
+        if (NUM2 != null) { answ_q2 = Generate(transformQ,length); }
+        if (sum == true) { answ_sum_q3 = Summer(NUM1, NUM2, q1, q2, q3); }
+        if (sum == false) { task = "Переведите " + NUM1.ToString() + "  из  " + q1.ToString() + " в " + q2.ToString() + " систему исчисления"; }
+        else { task = NUM1.ToString() + "(" + q1.ToString() + ") + " + NUM2.ToString() + "(" + q3.ToString() + ")  = ? (" + q3.ToString() + ")"; }
+    } 
     public void checker(TMP_InputField texxt)
     {
-        if (texxt.text == answ_q2) 
-        { 
-            Debug.Log("True!"); 
-            texxt.text = ""; 
-        } 
-        else 
-        { 
-            Debug.Log("False!"); 
-            texxt.text = ""; 
-        } 
+        bool done = false;
+
+        if (texxt.text == answ_q1) 
+        { Debug.Log("True!"); done = true; } 
+        else { Debug.Log("False!"); done = false; } 
+
+        texxt.text = "";
+        /*Data*/
+            StreamWriter writer = new StreamWriter(NAME + ".txt", true);
+            writer.WriteLine("---");
+            writer.WriteLine(System.DateTime.UtcNow.ToString());
+            if (done == true) { writer.Write(task + " :: true"); }
+            else { writer.WriteLine(task + " :: false"); }
+
+            writer.WriteLine("---");
+            writer.Close();
+        /*Data*/
         Next();
     }
     private void Start() 
-    {
-        Next();    
-    }
+    { Next(); }
     private void Update() 
     {
-        text.text = "Переведите " + answ_q1.ToString() + " из " + q1.ToString() + " - ричной в " + q2.ToString() + " - ую"; 
+        text.text = task;
     }
 }
