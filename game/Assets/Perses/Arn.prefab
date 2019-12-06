@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1244525204324953418}
   - component: {fileID: 4902828844450548561}
   m_Layer: 0
-  m_Name: Pers
+  m_Name: Arn
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,8 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoints: []
-  Movespeed: 1
-  Rotspeed: 60
+  Movespeed: 2
+  Rotspeed: 80
   invert_move: 1
   invert_rot: 0
   AnimState: 0

@@ -5,13 +5,12 @@ using UnityEngine.UI;
 using System.Text;
 using System.IO;
 using TMPro;
-
 public class SystemsQuiz : MonoBehaviour
 {
     
     #region  options
         [SerializeField] string NAME = "Вова Ерохин";
-        [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, q3 = 10, transformQ = 10, length = 3;
+        [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, sumQ = 10, transformQ = 10, length = 3;
         [TextArea(1,1)][SerializeField] string NUM1 = null, NUM2 = null;
         [SerializeField] bool sum = false;
         public string answ_q1 = "", answ_q2 = "", answ_sum_q3 = "";
@@ -133,37 +132,59 @@ public class SystemsQuiz : MonoBehaviour
         string n2 = Transform(num2,q2_,10);
         //Debug.Log(n2 + " :: " + num2);
         int n3 = System.Convert.ToInt16(n1) + System.Convert.ToInt16(n2);
-        Debug.Log(System.Convert.ToInt16(n1) + " + " + System.Convert.ToInt16(n2) + " = " + n3);
+        //Debug.Log(System.Convert.ToInt16(n1) + " + " + System.Convert.ToInt16(n2) + " = " + n3);
         return Transform(n3.ToString(), 10, q3_);
     }
     public void Next() 
     {      
-        if (NUM1 != null) { answ_q1 = Generate(transformQ,length); }
-        if (NUM2 != null) { answ_q2 = Generate(transformQ,length); }
-        if (sum == true) { answ_sum_q3 = Summer(NUM1, NUM2, q1, q2, q3); }
-        if (sum == false) { task = "Переведите " + NUM1.ToString() + "  из  " + q1.ToString() + " в " + q2.ToString() + " систему исчисления"; }
-        else { task = NUM1.ToString() + "(" + q1.ToString() + ") + " + NUM2.ToString() + "(" + q3.ToString() + ")  = ? (" + q3.ToString() + ")"; }
+        if (NUM1 != null) { answ_q1 = Transform(NUM1, q1, transformQ); }
+        if (NUM2 != null) { answ_q2 = Transform(NUM2, q2, transformQ); }
+
+        if (sum == true) { answ_sum_q3 = Summer(NUM1, NUM2, q1, q2, sumQ); }
+
+        if (sum == false) 
+        { 
+            task = NUM1.ToString() + "  [" + q1.ToString() + "] --> ? [" + transformQ.ToString() + "]"; 
+        }
+        else 
+        { 
+            task = NUM1.ToString() + "[" + q1.ToString() + "] + " + NUM2.ToString() + "[" + sumQ.ToString() + "]  = ? [" + sumQ.ToString() + "]"; 
+        }
     } 
     public void checker(TMP_InputField texxt)
     {
-        bool done = false;
+        if (texxt.text != null)
+        {
+            bool done = false;
+            if (sum == true)
+            {
+                if (texxt.text == answ_sum_q3) { done = true; } else { done = false; }
+            } else
+            {
+                if (texxt.text == answ_q1) { done = true; } else { done = false; } 
+            }
+            /*Data*/
+               // DateTime now = DateTime.Now;
 
-        if (texxt.text == answ_q1) 
-        { Debug.Log("True!"); done = true; } 
-        else { Debug.Log("False!"); done = false; } 
+                StreamWriter writer = new StreamWriter(NAME + ".txt", true);
+                writer.WriteLine(" [TIME :: " + System.DateTime.Now.ToString() + "]");
 
-        texxt.text = "";
-        /*Data*/
-            StreamWriter writer = new StreamWriter(NAME + ".txt", true);
-            writer.WriteLine("---");
-            writer.WriteLine(System.DateTime.UtcNow.ToString());
-            if (done == true) { writer.Write(task + " :: true"); }
-            else { writer.WriteLine(task + " :: false"); }
-
-            writer.WriteLine("---");
-            writer.Close();
-        /*Data*/
-        Next();
+                if (done == true) { writer.WriteLine("     |" + task); } else { writer.WriteLine("     | " + task); }
+                if (sum == true) 
+                { 
+                    writer.WriteLine("     | Ответ ученика :: " + texxt.text);
+                    writer.WriteLine("     | Верный ответ :: " + answ_sum_q3); 
+                } else 
+                { 
+                    writer.WriteLine("     | Ответ ученика :: " + texxt.text);
+                    writer.WriteLine("     | Верный ответ :: " + answ_q1); 
+                }
+                if (done == true) { writer.WriteLine("     | Верно!"); } else { writer.WriteLine("     | Неверно!"); }
+                writer.Close();
+            /*Data*/
+            texxt.text = "";
+            Next();
+        }
     }
     private void Start() 
     { Next(); }
