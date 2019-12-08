@@ -9,16 +9,19 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Beta/Trayler.unity
+    path: Assets/Scenes/NameHold.unity
+    guid: 9744a3c6c9b013a4d9f06d64951491cf
+  - enabled: 1
+    path: Assets/Scenes/Trayler.unity
     guid: c92e8a029baed994e8998f75e3bc11d2
   - enabled: 1
-    path: Assets/Scenes/Beta/Floor1.unity
+    path: Assets/Scenes/Floor1.unity
     guid: c4f04e62fb4d91b4ab3f212558c202e3
   - enabled: 1
-    path: Assets/Scenes/Beta/Floor2.unity
+    path: Assets/Scenes/Floor2.unity
     guid: fad30a2cb87689347a5dac519c6db412
   - enabled: 1
-    path: Assets/Scenes/Beta/End.unity
+    path: Assets/Scenes/End.unity
     guid: 6f66480d53d4ee24195ee44307c6d23e
   - enabled: 1
     path: Assets/Scenes/Desert.unity

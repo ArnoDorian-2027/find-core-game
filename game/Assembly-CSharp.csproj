@@ -58,6 +58,7 @@
      <Compile Include="Assets\C#\Logic.cs" />
      <Compile Include="Assets\C#\Logic_Input.cs" />
      <Compile Include="Assets\C#\Logic_Operations.cs" />
+     <Compile Include="Assets\C#\NameHolder.cs" />
      <Compile Include="Assets\C#\PersCard.cs" />
      <Compile Include="Assets\C#\PersControls.cs" />
      <Compile Include="Assets\C#\SP_ADD.cs" />

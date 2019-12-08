@@ -24,6 +24,8 @@ public class DialogScript : MonoBehaviour
     [SerializeField] GameObject theother = null;
     [SerializeField] bool Del = false;
     [SerializeField] GameObject Delete = null;
+    [SerializeField] bool Enab = false;
+    [SerializeField] GameObject Enable = null;
     [SerializeField] bool LerpUse = false;
     [SerializeField] Lerp Lerp = null;
     private int i = 0;
@@ -54,11 +56,11 @@ public class DialogScript : MonoBehaviour
             p_controler.blockmove = false;
             if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
             else { Destroy(this); }
-            //Destroy(this.gameObject);
             if (UseDoor == true) { doorManager.USEFULLY = true; }
             if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
             if (Del == true) { Destroy(Delete); }
             if (LerpUse == true) { Lerp.USEFULLY = true; }
+            if (Enab == true) { Enable.SetActive(true); }
         }
         
     }

@@ -9,16 +9,15 @@ public class SystemsQuiz : MonoBehaviour
 {
     
     #region  options
-        [SerializeField] string NAME = "Вова Ерохин";
+        [SerializeField] string NAME = null;
         [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, sumQ = 10, transformQ = 10, length = 3;
         [TextArea(1,1)][SerializeField] string NUM1 = null, NUM2 = null;
         [SerializeField] bool sum = false;
         public string answ_q1 = "", answ_q2 = "", answ_sum_q3 = "";
         [Header("SETTINGS")]
-        [SerializeField] TextMeshProUGUI text;
+        [SerializeField] TextMeshProUGUI quiz;
         string task = null;
     #endregion
-
     public string Generate(int sy, int len)
     {  
         StringBuilder s = new StringBuilder();
@@ -148,7 +147,7 @@ public class SystemsQuiz : MonoBehaviour
         }
         else 
         { 
-            task = NUM1.ToString() + "[" + q1.ToString() + "] + " + NUM2.ToString() + "[" + sumQ.ToString() + "]  = ? [" + sumQ.ToString() + "]"; 
+            task = NUM1.ToString() + "[" + q1.ToString() + "] + " + NUM2.ToString() + "[" + q2.ToString() + "]  = ? [" + sumQ.ToString() + "]"; 
         }
     } 
     public void checker(TMP_InputField texxt)
@@ -163,33 +162,48 @@ public class SystemsQuiz : MonoBehaviour
             {
                 if (texxt.text == answ_q1) { done = true; } else { done = false; } 
             }
-            /*Data*/
-               // DateTime now = DateTime.Now;
-
-                StreamWriter writer = new StreamWriter(NAME + ".txt", true);
-                writer.WriteLine(" [TIME :: " + System.DateTime.Now.ToString() + "]");
-
-                if (done == true) { writer.WriteLine("     |" + task); } else { writer.WriteLine("     | " + task); }
-                if (sum == true) 
-                { 
-                    writer.WriteLine("     | Ответ ученика :: " + texxt.text);
-                    writer.WriteLine("     | Верный ответ :: " + answ_sum_q3); 
-                } else 
-                { 
-                    writer.WriteLine("     | Ответ ученика :: " + texxt.text);
-                    writer.WriteLine("     | Верный ответ :: " + answ_q1); 
-                }
-                if (done == true) { writer.WriteLine("     | Верно!"); } else { writer.WriteLine("     | Неверно!"); }
-                writer.Close();
-            /*Data*/
+                        /*Data*/
+            StreamWriter writer = new StreamWriter(NAME + ".txt", true);
+            writer.WriteLine(" [TIME :: " + System.DateTime.Now.ToString() + "]");
+            if (done == true) { writer.WriteLine("     |" + task); } else { writer.WriteLine("     | " + task); }
+            if (sum == true) 
+            { 
+                writer.WriteLine("     | Ответ ученика :: " + texxt.text);
+                writer.WriteLine("     | Верный ответ :: " + answ_sum_q3); 
+            } else 
+            { 
+                writer.WriteLine("     | Ответ ученика :: " + texxt.text);
+                writer.WriteLine("     | Верный ответ :: " + answ_q1); 
+            }
+            if (done == true) 
+            { 
+                writer.WriteLine("     | Верно!");  
+                gameObject.SetActive(false);
+            } else 
+            { 
+                writer.WriteLine("     | Неверно!"); 
+            }
+            writer.Close();
+                        /*Data*/
             texxt.text = "";
-            Next();
+            
+            if (NUM1 != null && NUM2 != null) { Next(); }  else { this.gameObject.SetActive(false); }
         }
     }
+    private void makeName() 
+    { 
+        
+        StreamReader reader = new StreamReader("name.txt", true); 
+        NAME = reader.ReadLine(); 
+        Debug.Log(NAME);
+    }
     private void Start() 
-    { Next(); }
+    {
+        makeName();
+        Next();
+    }
     private void Update() 
     {
-        text.text = task;
+        quiz.text = task;
     }
 }
