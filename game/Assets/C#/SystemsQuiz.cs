@@ -178,7 +178,9 @@ public class SystemsQuiz : MonoBehaviour
             if (done == true) 
             { 
                 writer.WriteLine("     | Верно!");  
-                gameObject.SetActive(false);
+                //.SetActive(false);
+                Animator anim = gameObject.GetComponent<Animator>();
+                anim.SetBool("Open", false);
             } else 
             { 
                 writer.WriteLine("     | Неверно!"); 
@@ -192,7 +194,6 @@ public class SystemsQuiz : MonoBehaviour
     }
     private void makeName() 
     { 
-        
         StreamReader reader = new StreamReader("name.txt", true); 
         NAME = reader.ReadLine(); 
         Debug.Log(NAME);

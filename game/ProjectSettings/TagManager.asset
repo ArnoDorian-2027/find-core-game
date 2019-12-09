@@ -6,6 +6,8 @@ TagManager:
   tags:
   - tree
   - BORDER
+  - System
+  - Graph
   layers:
   - Default
   - TransparentFX

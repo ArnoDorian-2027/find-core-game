@@ -53,6 +53,7 @@
      <Compile Include="Assets\C#\DialogScript.cs" />
      <Compile Include="Assets\C#\DoorController.cs" />
      <Compile Include="Assets\C#\Go.cs" />
+     <Compile Include="Assets\C#\Graphs.cs" />
      <Compile Include="Assets\C#\L_R_DoorController.cs" />
      <Compile Include="Assets\C#\Lerp.cs" />
      <Compile Include="Assets\C#\Logic.cs" />
@@ -66,7 +67,6 @@
      <Compile Include="Assets\C#\StoryMaker.cs" />
      <Compile Include="Assets\C#\SystemsQuiz.cs" />
      <Compile Include="Assets\C#\TargetAnim.cs" />
-     <Compile Include="Assets\C#\UI_.cs" />
      <None Include="Assets\Other\Imports\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Other\Imports\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />

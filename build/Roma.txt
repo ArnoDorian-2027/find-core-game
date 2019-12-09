@@ -1,0 +1,12 @@
+ [TIME :: 09.12.2019 21:50:25]
+     | Ответ ученика :: 12
+     | Верный ответ :: 12
+     | Верно!
+ [TIME :: 09.12.2019 21:54:19]
+     | Ответ ученика :: 12
+     | Верный ответ :: 12
+     | Верно!
+ [TIME :: 09.12.2019 21:56:08]
+     | Ответ ученика ::  sssssssssssssssssssssssdddddWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWAAAAAAAAAAAAAAAA
+     | Верный ответ :: 12
+     | Неверно!

@@ -8,28 +8,28 @@ using TMPro;
 public class DialogScript : MonoBehaviour
 {  
     #region Initalize 
-    [SerializeField] PersControls p_controler = null;
-    [SerializeField] Animator anim = null;
-    [SerializeField] Image im = null;
-    [SerializeField] TextMeshProUGUI replic = null, Name = null;
-    [SerializeField] float WordDelay = 0f;
-    public bool USEFULLY = false;
-    [SerializeField] PersCard[] PersCard;
-    [TextArea(3,100)][SerializeField] string[] words;
-    [SerializeField] bool UseDoor = false;
-    [SerializeField] DoorController doorManager = null;
-    [SerializeField] bool UseSceneChanger = false;
-    [SerializeField] SceneChanger sc_changer = null;
-    [SerializeField] bool twisedialog = false;
-    [SerializeField] GameObject theother = null;
-    [SerializeField] bool Del = false;
-    [SerializeField] GameObject Delete = null;
-    [SerializeField] bool Enab = false;
-    [SerializeField] GameObject Enable = null;
-    [SerializeField] bool LerpUse = false;
-    [SerializeField] Lerp Lerp = null;
-    private int i = 0;
-    private bool used_repl = true;
+        [SerializeField] PersControls p_controler = null;
+        [SerializeField] Animator anim = null;
+        [SerializeField] Image im = null;
+        [SerializeField] TextMeshProUGUI replic = null, Name = null;
+        [SerializeField] float WordDelay = 0f;
+        public bool USEFULLY = false;
+        [SerializeField] PersCard[] PersCard;
+        [TextArea(3,100)][SerializeField] string[] words;
+        [SerializeField] bool UseDoor = false;
+        [SerializeField] DoorController doorManager = null;
+        [SerializeField] bool UseSceneChanger = false;
+        [SerializeField] SceneChanger sc_changer = null;
+        [SerializeField] bool twisedialog = false;
+        [SerializeField] GameObject theother = null;
+        [SerializeField] bool Del = false;
+        [SerializeField] GameObject Delete = null;
+        [SerializeField] bool Enab = false;
+        [SerializeField] GameObject Enable = null;
+        [SerializeField] bool LerpUse = false;
+        [SerializeField] Lerp Lerp = null;
+        private int i = 0;
+        private bool used_repl = true;
     #endregion
     
     private void Update() 
@@ -60,9 +60,18 @@ public class DialogScript : MonoBehaviour
             if (UseSceneChanger == true) { sc_changer.USEFULLY = true; }
             if (Del == true) { Destroy(Delete); }
             if (LerpUse == true) { Lerp.USEFULLY = true; }
-            if (Enab == true) { Enable.SetActive(true); }
+            if (Enab == true) 
+            { 
+                Enable.SetActive(true); 
+                if (Enable.tag == "System" || Enable.tag == "Graph")
+                {
+                    Animator anim = Enable.GetComponent<Animator>();
+                    anim.SetBool("Open",true);
+                    RectTransform rt = Enable.GetComponent<RectTransform>();
+                    rt.SetAsLastSibling();
+                }
+            }
         }
-        
     }
     void NextReplic() 
     {
