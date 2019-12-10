@@ -29,11 +29,11 @@ public class PersControls : MonoBehaviour
             z = Input.GetAxis("Vertical");
         }
         if (Mathf.Abs(z) > 0.4 && Input.GetKey(KeyCode.LeftShift))
-        { AnimState = 2; } 
+        { AnimState = 2; current_speed = 2; } 
         else
         {
             if (Mathf.Abs(z) > 0.4 && !Input.GetKey(KeyCode.LeftShift))
-            { AnimState = 1; }  
+            { AnimState = 1; current_speed = 1; }  
             else
             {
                 if (Mathf.Abs(z) < 0.4 && !Input.GetKeyDown(KeyCode.LeftShift))
@@ -42,11 +42,11 @@ public class PersControls : MonoBehaviour
             
         }
 
-        if (invert_move == false) { this.transform.Translate(Movespeed * AnimState * Time.fixedDeltaTime * z, 0f, 0f); }
-            else { this.transform.Translate(Movespeed * Time.fixedDeltaTime * -z, 0f, 0f); }
+        if (invert_move == false) { this.transform.Translate(Movespeed * current_speed * Time.fixedDeltaTime * z, 0f, 0f); }
+            else { this.transform.Translate(Movespeed * current_speed * Time.fixedDeltaTime * -z, 0f, 0f); }
 
-        if (invert_rot == false) { this.transform.Rotate(0f, Time.fixedDeltaTime * Rotspeed * x, 0f); }
-            else { this.transform.Rotate(0f, Time.fixedDeltaTime * AnimState * Rotspeed * -x, 0f); }
+        if (invert_rot == false) { this.transform.Rotate(0f, Time.fixedDeltaTime * current_speed * Rotspeed * x, 0f); }
+            else { this.transform.Rotate(0f, Time.fixedDeltaTime * current_speed * Rotspeed * -x, 0f); }
 
         animator.SetInteger("AnimState", AnimState);
     }//Анимации, движения

@@ -391,6 +391,36 @@ PrefabInstance:
       propertyPath: m_textInfo.materialCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: q1
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: NAME
+      value: default
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: NUM1
+      value: 0A0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: sum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: transformQ
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: NUM2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 806962848221962648, guid: 07c5b03eda52de942a33becf46d18ac1,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1858,6 +1888,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad32b4846efdf1143ad1e3b725b1985e, type: 3}
+--- !u!1 &478196962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 806962848125972385, guid: 07c5b03eda52de942a33becf46d18ac1,
+    type: 3}
+  m_PrefabInstance: {fileID: 66283747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &488109902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3426,6 +3462,16 @@ PrefabInstance:
     - target: {fileID: 5779481243733227424, guid: dcb3d9c5480140743abe2f0422d32d27,
         type: 3}
       propertyPath: USEFULLY
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779481243733227424, guid: dcb3d9c5480140743abe2f0422d32d27,
+        type: 3}
+      propertyPath: Enable
+      value: 
+      objectReference: {fileID: 478196962}
+    - target: {fileID: 5779481243733227424, guid: dcb3d9c5480140743abe2f0422d32d27,
+        type: 3}
+      propertyPath: Enab
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5779481243733227425, guid: dcb3d9c5480140743abe2f0422d32d27,
