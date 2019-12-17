@@ -45,6 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\C#\Attempt.cs" />
      <Compile Include="Assets\C#\CadSceneController.cs" />
      <Compile Include="Assets\C#\CamControl.cs" />
      <Compile Include="Assets\C#\CameraLockAt.cs" />

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Arn
   m_EditorClassIdentifier: 
   Name: "\u0410\u0440\u043D"
-  Image: {fileID: 21300000, guid: 9e4f76ab72cd65f47899037c0030f10a, type: 3}
+  Image: {fileID: 21300000, guid: a60d1f4fce0285748b4844ac6da88c52, type: 3}

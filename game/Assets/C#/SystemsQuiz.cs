@@ -9,7 +9,10 @@ public class SystemsQuiz : MonoBehaviour
 {
     
     #region  options
-        [SerializeField] string NAME = null;
+        // public
+        public string NAME = null;
+        public bool done = false;
+        //  Visible
         [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, sumQ = 10, transformQ = 10, length = 3;
         [TextArea(1,1)][SerializeField] string NUM1 = null, NUM2 = null;
         [SerializeField] bool sum = false;
@@ -154,7 +157,6 @@ public class SystemsQuiz : MonoBehaviour
     {
         if (texxt.text != null)
         {
-            bool done = false;
             if (sum == true)
             {
                 if (texxt.text == answ_sum_q3) { done = true; } else { done = false; }
@@ -196,7 +198,7 @@ public class SystemsQuiz : MonoBehaviour
     { 
         StreamReader reader = new StreamReader("name.txt", true); 
         NAME = reader.ReadLine(); 
-        Debug.Log(NAME);
+        //Debug.Log(NAME);
     }
     private void Start() 
     {

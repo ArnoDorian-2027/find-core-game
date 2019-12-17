@@ -8,6 +8,9 @@ using TMPro;
 public class Graphs : MonoBehaviour
 {
     #region init
+        // public
+        public bool done = false;
+        // Visible
         [SerializeField] Image Graph;
         [SerializeField] Sprite source;
         [SerializeField] string answer = null, NAME = "default";
@@ -19,7 +22,7 @@ public class Graphs : MonoBehaviour
         {
             StreamReader reader = new StreamReader("name.txt", true); 
             NAME = reader.ReadLine(); 
-            Debug.Log(NAME);
+            //Debug.Log(NAME);
         }
         Graph.sprite = source;
     }
@@ -27,7 +30,8 @@ public class Graphs : MonoBehaviour
     {
         StreamWriter write = new StreamWriter(NAME + ".txt", true);
         write.WriteLine(" [TIME :: " + System.DateTime.Now.ToString() + "]");
-        if (input.text == answer) 
+        done = input.text == answer;
+        if (done) 
         {  
             write.WriteLine("     | Ответ ученика :: " + input.text);
             write.WriteLine("     | Верный ответ :: " + answer); 
