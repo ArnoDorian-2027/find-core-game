@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 //using UnityEngine.Animation;
 public class SceneChanger : MonoBehaviour
 {
+    [Header("Main Options")] [Space(-5)]
     [SerializeField] private int ID = 0;
     public bool USEFULLY = false;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && USEFULLY == true)  

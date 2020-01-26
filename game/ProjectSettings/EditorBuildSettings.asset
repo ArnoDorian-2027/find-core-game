@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/End.unity
     guid: 6f66480d53d4ee24195ee44307c6d23e
   - enabled: 1
+    path: Assets/Scenes/Sbbtitle.unity
+    guid: 7b89565b52b7bb94b9f2fdfbb6bea253
+  - enabled: 1
     path: Assets/Scenes/Desert.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

@@ -2,25 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using NaughtyAttributes;
+
 public class PersControls : MonoBehaviour
 {
-    
-    public List<Vector3> SpawnPoints;
-    [SerializeField] float Movespeed, Rotspeed;
-    [SerializeField] bool invert_move = false, invert_rot = false;
-    float current_speed = 0f;
-    public int AnimState = 0;
-    public bool blockmove = false;
-    bool isSpawn = false;
-    Animator animator;
-    Camera Cam;
+    #region init
+    //visible
+        [BoxGroup("Speed Options")] [SerializeField] float Movespeed, Rotspeed;
+        [BoxGroup("Invert Options")] [SerializeField] bool invert_move = false, invert_rot = false;
+        [HideInInspector] public List<Vector3> SpawnPoints;
+        [Button("Set to defoult")]
+        void Button1()
+        {
+            invert_move = true; invert_rot = false;
+            Movespeed = 1; Rotspeed = 160;
+        }
+    //private
+        float current_speed = 0f;
+        [HideInInspector] public int AnimState = 0;
+        [HideInInspector] public bool blockmove = false;
+        bool isSpawn = false;
+        Animator animator;
+        Camera Cam;
+        
+    #endregion
     private void Start()
     {
         Cam = Camera.main;
         if (this.GetComponent<Animator>() != null)  
         { animator = this.GetComponent<Animator>(); } else { Debug.LogError("Animator not found at " + this.gameObject); }
     }
-    private void Update()
+    private void FixedUpdate()
     {  
         float x = 0f, z = 0f;
         if (blockmove == false)
@@ -50,7 +62,5 @@ public class PersControls : MonoBehaviour
 
         animator.SetInteger("AnimState", AnimState);
     }//Анимации, движения
-    
-
     
 }

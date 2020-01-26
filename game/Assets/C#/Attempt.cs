@@ -7,16 +7,15 @@ using TMPro;
 public class Attempt : MonoBehaviour
 {
     #region Init
-        //Public
-        //Visible
+        //visible
         [SerializeField] string Name = "default";
         [SerializeField] bool This_destroy = false;
         [Range(1,10)][SerializeField] int Attempts = 3;
         [SerializeField] bool Graph_out = false;
         [SerializeField] Graphs graph = null;
         [SerializeField] bool System_out = false;
-        [SerializeField] SystemsQuiz syst= null;
-        //Private
+        [SerializeField] SystemsQuiz syst = null;
+        //private
         private int i = 0;
     #endregion
     private void Awake() 

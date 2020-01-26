@@ -5,21 +5,65 @@ using UnityEngine.UI;
 using System.Text;
 using System.IO;
 using TMPro;
+using NaughtyAttributes;
+
 public class SystemsQuiz : MonoBehaviour
-{
-    
+{  
     #region  options
-        // public
-        public string NAME = null;
-        public bool done = false;
-        //  Visible
-        [Range(2,16)][SerializeField] int q1 = 2, q2 = 2, sumQ = 10, transformQ = 10, length = 3;
-        [TextArea(1,1)][SerializeField] string NUM1 = null, NUM2 = null;
-        [SerializeField] bool sum = false;
-        public string answ_q1 = "", answ_q2 = "", answ_sum_q3 = "";
-        [Header("SETTINGS")]
-        [SerializeField] TextMeshProUGUI quiz;
+    //visible/+
+        [HideInInspector] public string NAME = null;
+        [HideInInspector] public bool done = false;
+        [BoxGroup("Main Settings")] [SerializeField] TextMeshProUGUI quiz;
+
+        [BoxGroup("Input Settings")] [Range(2,16)] [SerializeField] int q1 = 2;
+        [BoxGroup("Input Settings")] [Range(2,16)] [SerializeField] int q2 = 2;
+        [BoxGroup("Input Settings")] [Range(2,16)] [SerializeField] int sumQ = 10; 
+        [BoxGroup("Input Settings")] [Range(2,16)] [SerializeField] int transformQ = 10; 
+        [BoxGroup("Input Settings")] [Range(2,16)] [SerializeField] int length = 3;
+        [BoxGroup("Input Settings")] [Multiline(1)] [SerializeField] string NUM1 = null, NUM2 = null;
+
+        [BoxGroup("Answer Settings")] [SerializeField] bool sum = false;
+        [BoxGroup("Answer Settings")] public string answ_q1 = "", answ_q2 = "", answ_sum_q3 = "";
+        
+    //private
         string task = null;
+    //buttons
+        [Button("Recount")] 
+            void UpdateNums() 
+            {
+                NUM1 = Generate(q1, length);
+                NUM2 = Generate(q2, length);
+                if (sum) { answ_sum_q3 = Summer(NUM1, NUM2, q1, q2, sumQ); answ_q1 = ""; answ_q2 = ""; } 
+                else { answ_sum_q3 = ""; answ_q1 = Transform(NUM1, q1, transformQ); answ_q2 = Transform(NUM2, q2, transformQ); }
+            }
+        [Button("Set to default options")]             
+            void OptionsSetDefault() 
+            {
+                q1 = 2;
+                q2 = 2;
+                sumQ = 10; 
+                transformQ = 10;
+                length = 3;
+                NUM1 = "";
+                NUM2 = "";
+                answ_q1 = "";
+                answ_q2 = "";
+                answ_sum_q3 = "";
+            }
+        [Button("Generate new options")]
+            void OptionsGenerator() 
+            {
+                q1 = Random.Range(2,16);
+                q2 = Random.Range(2,16);
+                sumQ = Random.Range(2,16); 
+                transformQ = Random.Range(2,16);
+                length = 3;
+                NUM1 = "";
+                NUM2 = "";
+                answ_q1 = "";
+                answ_q2 = "";
+                answ_sum_q3 = "";
+            }
     #endregion
     public string Generate(int sy, int len)
     {  
@@ -157,7 +201,7 @@ public class SystemsQuiz : MonoBehaviour
     {
         if (texxt.text != null)
         {
-            if (sum == true)
+            if (sum)
             {
                 if (texxt.text == answ_sum_q3) { done = true; } else { done = false; }
             } else

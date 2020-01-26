@@ -1,20 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using NaughtyAttributes;
 public class Lerp : MonoBehaviour
 {
 	#region Init
-	[SerializeField] KeyCode Button;
-	[SerializeField] float resistance, increment;
-	[SerializeField] Transform start, end;
-	public bool USEFULLY = false;
-	[SerializeField] bool RemoveAtEnd = false;
-	[SerializeField] bool UseDoor = false;
-	[SerializeField] DoorController door;
-	[SerializeField] bool UseDialog = false;
-	[SerializeField] DialogScript dialog;
-	private float t = 0;
+	//visible
+		[Header("Main Options")] [Space(-5)]
+			[SerializeField] bool ShowMain = false;
+			[ShowIf("ShowMain")] public bool USEFULLY = false;
+			[ShowIf("ShowMain")] [SerializeField] KeyCode Button;
+			[ShowIf("ShowMain")] [SerializeField] float resistance, increment;
+			[ShowIf("ShowMain")] [SerializeField] Transform start, end;
+		
+		[Header("Destroer Settings")] [Space(-5)]
+			[SerializeField] bool RemoveAtEnd = false;
+
+		[Header("Door Settings")] [Space(-5)]
+			[SerializeField] bool UseDoor = false;
+			[ShowIf("UseDoor")] [SerializeField] DoorController door;
+		
+		[Header("Dialog Settings")] [Space(-5)]
+			[SerializeField] bool UseDialog = false;
+			[ShowIf("UseDialog")] [SerializeField] DialogScript dialog;
+	//private
+		private float t = 0;
+	//button
 	#endregion
 	private void Start() 
 	{
@@ -22,7 +33,7 @@ public class Lerp : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (USEFULLY == true)
+		if (USEFULLY)
 		{
 			if (Input.GetKeyUp(Button)) { t = Mathf.Clamp01(t + increment); }
 			else { t = Mathf.Clamp01( t - (resistance * Time.fixedDeltaTime)); }
@@ -32,9 +43,9 @@ public class Lerp : MonoBehaviour
 			if (t == 1)
 			{
 				this.gameObject.transform.position = end.position;
-				if (UseDoor == true) { door.USEFULLY = true; }
-				if (UseDialog == true) { dialog.USEFULLY = true; }
-				if (RemoveAtEnd == true) { Destroy(this); }
+				if (UseDoor) { door.USEFULLY = true; }
+				if (UseDialog) { dialog.USEFULLY = true; }
+				if (RemoveAtEnd) { Destroy(this); }
 			}
 		}
 		

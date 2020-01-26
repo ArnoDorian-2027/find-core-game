@@ -3,35 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using NaughtyAttributes;
 
 public class DialogScript : MonoBehaviour
 {  
-    #region Initalize 
-        [SerializeField] PersControls p_controler = null;
-        [SerializeField] Animator anim = null;
-        [SerializeField] Image im = null;
-        [SerializeField] TextMeshProUGUI replic = null, Name = null;
-        [SerializeField] float WordDelay = 0f;
-        public bool USEFULLY = false;
-        [SerializeField] PersCard[] PersCard;
-        [TextArea(3,100)][SerializeField] string[] words;
-        [SerializeField] bool UseDoor = false;
-        [SerializeField] DoorController doorManager = null;
-        [SerializeField] bool UseSceneChanger = false;
-        [SerializeField] SceneChanger sc_changer = null;
-        [SerializeField] bool twisedialog = false;
-        [SerializeField] GameObject theother = null;
-        [SerializeField] bool Del = false;
-        [SerializeField] GameObject Delete = null;
-        [SerializeField] bool Enab = false;
-        [SerializeField] GameObject Enable = null;
-        [SerializeField] bool LerpUse = false;
-        [SerializeField] Lerp Lerp = null;
+    #region Initalize
+    //public
+    //visible
+            [BoxGroup("Main")] [SerializeField] bool ShowMain = false;
+            [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] PersControls p_controler = null;
+            [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] Animator anim = null;
+            [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] Image im = null;
+            [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] TextMeshProUGUI replic = null, Name = null;
+            [BoxGroup("Main")] [ShowIf("ShowMain")] public bool USEFULLY = false;
+
+            [BoxGroup("Replics")] [SerializeField] bool ShowReplics = false;
+            [BoxGroup("Replics")] [ShowIf("ShowReplics")] [SerializeField] float WordDelay = 0f;
+            [BoxGroup("Replics")] [ShowIf("ShowReplics")] [ReorderableList] [SerializeField] PersCard[] PersCard;
+            [BoxGroup("Replics")]  [ShowIf("ShowReplics")] [ReorderableList][ResizableTextArea] [SerializeField] string[] words;
+
+
+            [BoxGroup("Activate door at end")] [SerializeField] bool UseDoor = false;
+            [BoxGroup("Activate door at end")] [ShowIf("UseDoor")] [SerializeField] DoorController doorManager = null;
+
+            [BoxGroup("Activate scene changer at end")] [SerializeField] bool UseSceneChanger = false;
+            [BoxGroup("Activate scene changer at end")] [ShowIf("UseSceneChanger")] [SerializeField] SceneChanger sc_changer = null;
+        
+            [BoxGroup("Activate another dialog at end")] [SerializeField] bool twisedialog = false;
+            [BoxGroup("Activate another dialog at end")] [ShowIf("twisedialog")] [SerializeField] GameObject theother = null;
+        
+            [BoxGroup("Delete objects at end")] [SerializeField] bool Del = false;
+            [BoxGroup("Delete objects at end")] [ShowIf("Del")] [SerializeField] GameObject Delete = null;
+
+            [BoxGroup("Enable objects at end")]  [SerializeField] bool Enab = false;
+            [BoxGroup("Enable objects at end")] [ShowIf("Enab")] [SerializeField] GameObject Enable = null;
+        
+            [BoxGroup("Activate Lerp objects at end")] [SerializeField] bool LerpUse = false;
+            [BoxGroup("Activate Lerp objects at end")] [ShowIf("LerpUse")] [SerializeField] Lerp Lerp = null;
+    //private
         private int i = 0;
         private bool used_repl = true;
     #endregion
-    
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.T) && Input.GetKeyDown(KeyCode.G) && USEFULLY) { Outside(); }

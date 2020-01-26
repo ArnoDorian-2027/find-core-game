@@ -1357,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a65e5e80c50c548a69881a4f5c9512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  done: 0
   Graph: {fileID: 806962847629114591}
   source: {fileID: 21300000, guid: ba874ab370901924791bebfe25fe5d6a, type: 3}
   answer: 12
@@ -1390,9 +1391,9 @@ GameObject:
   m_Component:
   - component: {fileID: 806962848125972384}
   - component: {fileID: 806962848125972381}
+  - component: {fileID: 806962848125972380}
   - component: {fileID: 806962848125972387}
   - component: {fileID: 806962848125972386}
-  - component: {fileID: 806962848125972380}
   m_Layer: 5
   m_Name: System
   m_TagString: System
@@ -1449,39 +1450,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &806962848125972387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806962848125972385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c3be8d6e18bc8a4d997d5245d75bc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NAME: 123
-  q1: 2
-  q2: 2
-  sumQ: 10
-  transformQ: 10
-  length: 4
-  NUM1: 1
-  NUM2: 10
-  sum: 1
-  answ_q1: 
-  answ_q2: 
-  answ_sum_q3: 
-  quiz: {fileID: 806962848755768030}
---- !u!222 &806962848125972386
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806962848125972385}
-  m_CullTransparentMesh: 0
 --- !u!95 &806962848125972380
 Animator:
   serializedVersion: 3
@@ -1501,6 +1469,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &806962848125972387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806962848125972385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3be8d6e18bc8a4d997d5245d75bc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NAME: 123
+  done: 0
+  ShowInput: 0
+  q1: 2
+  q2: 2
+  sumQ: 10
+  transformQ: 10
+  length: 3
+  NUM1: 
+  NUM2: 
+  ShowAnswer: 0
+  sum: 1
+  answ_q1: 
+  answ_q2: 
+  answ_sum_q3: 
+  quiz: {fileID: 806962848755768030}
+--- !u!222 &806962848125972386
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806962848125972385}
+  m_CullTransparentMesh: 0
 --- !u!1 &806962848168463885
 GameObject:
   m_ObjectHideFlags: 0

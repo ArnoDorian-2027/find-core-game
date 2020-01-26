@@ -1236,6 +1236,36 @@ Transform:
   m_Father: {fileID: 532093338}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &161361163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161361165}
+  m_Layer: 0
+  m_Name: Testobj
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161361165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161361163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.665136, y: -16.148708, z: -20.632538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162104166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,7 +3264,6 @@ Transform:
   - {fileID: 1941630144}
   - {fileID: 1913256041}
   - {fileID: 1364329129}
-  - {fileID: 1608550093}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3274,11 +3303,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9313532d7a92741a4b2316985e34c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: default
   This_destroy: 1
   Attempts: 3
-  Graph_destroy: 0
+  Graph_out: 0
   graph: {fileID: 0}
-  System_destroy: 1
+  System_out: 0
   syst: {fileID: 541477902}
 --- !u!1 &541523583
 GameObject:
@@ -3439,6 +3469,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1133984436}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &584378414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584378416}
+  - component: {fileID: 584378415}
+  m_Layer: 0
+  m_Name: Points
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &584378415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584378414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fc284e38fad3f43b05c8a54a9291f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseBounds: 0
+  UseBound1: 0
+  bounds1: {x: 0, y: 0}
+  AnimId1: 0
+  UseBound2: 0
+  bounds2: {x: 0, y: 0}
+  AnimId2: 0
+  UseBound3: 0
+  bounds3: {x: 0, y: 0}
+  AnimId3: 0
+  UseBound4: 0
+  bounds4: {x: 0, y: 0}
+  AnimId4: 0
+  minutes: 0
+  seconds: 0
+--- !u!4 &584378416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584378414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.665136, y: -16.148708, z: -20.632538}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613264650
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,13 +5200,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79e842948587424a87a7b23b7c13f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowMain: 0
   p_controler: {fileID: 9007769}
   anim: {fileID: 1818317396}
   im: {fileID: 1701929065}
   replic: {fileID: 376899727}
   Name: {fileID: 424444648}
-  WordDelay: 0
   USEFULLY: 1
+  ShowReplics: 0
+  WordDelay: 0
   PersCard:
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
@@ -5130,26 +5220,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
+  - {fileID: 11400000, guid: c7deaea6f24854a4bbb7b0e506093d34, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
-  - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
-  - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
-  - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
-  - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
-  - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
-  - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
   - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   - {fileID: 11400000, guid: f713460c7ec504f4986b6ba0082ede7a, type: 2}
+  - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
+  - {fileID: 11400000, guid: ebe98759ba8703a40a8a5646d7e465cd, type: 2}
   words:
-  - "\t\u041D\u0430\u0437\u043E\u0432\u0438 \u0441\u0432\u043E\u0435 \u0438\u043C\u044F,
-    \u043F\u0443\u0442\u043D\u0438\u043A!"
+  - "\t\u041D\u0430\u0437\u043E\u0432\u0438\u0441\u044C, \u043A\u0442\u043E \u0442\u044B?"
   - "\t\u041C\u043E\u0435 \u0438\u043C\u044F \u043D\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043D\u043E
     \u043B\u0438\u0431\u043E \u0431\u0435\u0437\u0433\u0440\u0430\u043C\u043E\u0442\u043D\u044B\u043C,
     \u043B\u0438\u0431\u043E \u043C\u0435\u0440\u0442\u0432\u044B\u043C. \u0418 \u0441\u0443\u0434\u044F
@@ -5161,45 +5247,31 @@ MonoBehaviour:
     \u0442\u0430\u043A \u043B\u0438?"
   - "\t(\u0414\u0443\u043C\u0430\u0435\u0442, \u043E\u0442\u0432\u0435\u0434\u044F
     \u0432\u0437\u0433\u043B\u044F\u0434 \u043E\u0442 \u043F\u0443\u0442\u043D\u0438\u043A\u0430)
-    \u041E\u043D \u0441\u043B\u0438\u0448\u043A\u043E\u043C \u043D\u0435\u0441\u0435\u0440\u044C\u0435\u0437\u0435\u043D
-    \u0434\u043B\u044F \u0442\u043E\u0433\u043E, \u043A\u0442\u043E \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
-    \u0432 \u0446\u0435\u043D\u0442\u0440\u0435 \u043F\u0435\u0441\u0447\u0430\u043D\u043E\u0439
-    \u0431\u0443\u0440\u0438."
-  - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u0412 \u043D\u0435\u043C \u043D\u0435\u0442
-    \u043D\u0430\u043C\u0435\u043A\u0430 \u043D\u0438 \u043D\u0430 \u0441\u0442\u0440\u0430\u0445
-    \u0438 \u043D\u0438 \u043D\u0430 \u043E\u0431\u0435\u0441\u043F\u043E\u043A\u043E\u0435\u043D\u043D\u043E\u0441\u0442\u044C\u2026
-    \u0421\u0435\u043A\u0443\u043D\u0434\u0443. \u0410 \u0447\u0435\u043B\u043E\u0432\u0435\u043A
-    \u043B\u0438 \u043E\u043D? \u0421\u0442\u043E\u0438\u0442 \u043F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C..."
+    \u041E\u043D \u0438\u0437\u043B\u0438\u0448\u043D\u0435 \u0441\u043F\u043E\u043A\u043E\u0435\u043D
+    \u0434\u043B\u044F \u0442\u0430\u043A\u043E\u0433\u043E \u043E\u043F\u0430\u0441\u043D\u043E\u0433\u043E
+    \u043C\u0435\u0441\u0442\u0430"
+  - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u041B\u044E\u0431\u043E\u0439 \u0434\u0440\u0443\u0433\u043E\u0439
+    \u0447\u0435\u043B\u043E\u0432\u0435\u043A, \u043A\u0430\u043A \u043C\u0438\u043D\u0438\u043C\u0443\u043C
+    \u0431\u044B \u0438\u0441\u043F\u0443\u0433\u0430\u043B\u0441\u044F, \u0430 \u044D\u0442\u043E\u043C\u0443
+    \u0432\u0441\u0451 \u043D\u0435\u043F\u043E\u0447\u0451\u043C. \u041C\u0438\u043D\u0443\u0442\u043A\u0443,
+    \u0430 \u0447\u0435\u043B\u043E\u0432\u0435\u043A \u043B\u0438 \u043E\u043D?..."
   - "\t(\u041F\u044B\u0442\u0430\u0435\u0442\u0441\u044F \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0438\u0442\u044C
     \u0440\u0443\u043A\u043E\u0439)"
-  - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u041D\u0435 \u0432\u044B\u0448\u043B\u043E\u2026
-    \u041D\u043E \u043F\u043E\u0447\u0435\u043C\u0443? \u041C\u043E\u0436\u0435\u0442,
-    \u0435\u0435 \u0437\u0430\u043A\u043B\u0438\u043D\u0438\u043B\u043E? "
-  - "\t\u0418\u0437-\u0437\u0430 \u0447\u0435\u0433\u043E \u0442\u044B \u043D\u0435
-    \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0448\u044C?!"
+  - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u0414\u0430 \u043B\u0430\u0434\u043D\u043E!
+    \u0417\u0430\u043A\u043B\u0438\u043D\u0438\u043B\u043E!..."
+  - "                \u041F\u043E\u0447\u0435\u043C\u0443 \u0442\u044B \u043C\u043E\u043B\u0447\u0438\u0448\u044C?!"
   - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u041F\u043B\u043E\u0445\u043E \u0434\u0435\u043B\u043E,
-    \u043D\u0438 \u0432\u0438\u0434\u043E\u0432\u043E\u0439 \u043F\u0440\u0438\u043D\u0430\u0434\u043B\u0435\u0436\u043D\u043E\u0441\u0442\u0438,
-    \u043D\u0438 \u0434\u0430\u0436\u0435 \u0438\u043C\u0435\u043D\u0438 \u0435\u0433\u043E
-    \u043D\u0435 \u0443\u0437\u043D\u0430\u043B. \u0425\u043C\u043C... \u0415\u0441\u043B\u0438
-    \u044F \u0431\u0443\u0434\u0443 \u043F\u0440\u043E\u0441\u0442\u043E \u0442\u0430\u043A
-    \u0441\u0442\u043E\u044F\u0442\u044C \u2013 \u043C\u043E\u0433\u0443 \u0432\u044B\u0437\u0432\u0430\u0442\u044C
-    \u043F\u043E\u0434\u043E\u0437\u0440\u0435\u043D\u0438\u044F. "
-  - "\t\u041F\u0435\u0441\u0447\u0430\u043D\u044B\u0439 \u0448\u0442\u043E\u0440\u043C
-    \u0441\u0431\u0438\u0432\u0430\u0435\u0442 \u0432\u0441\u0435 \u043C\u044B\u0441\u043B\u0438
-    \u2013 \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E \u0442\u0440\u0443\u0434\u043D\u043E
-    \u0441\u043E\u0441\u0440\u0435\u0434\u043E\u0442\u043E\u0447\u0438\u0442\u044C\u0441\u044F
-    \u043F\u0440\u0438 \u0442\u0430\u043A\u043E\u043C \u0448\u0443\u043C\u0435! \u0421\u043B\u0443\u0448\u0430\u0439,
-    \u0430 \u0442\u044B \u043D\u0435 \u0437\u043D\u0430\u0435\u0448\u044C \u043A\u0430\u043A
-    \u043E\u0442\u0441\u044E\u0434\u0430 \u0432\u044B\u0431\u0440\u0430\u0442\u044C\u0441\u044F?"
-  - "\t\u041A\u043E\u0433\u0434\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u0435\u0448\u044C
-    \u0447\u0443\u0432\u0441\u0442\u0432\u043E \u044E\u043C\u043E\u0440\u0430 \u0432
-    \u043F\u043E\u0434\u043E\u0431\u043D\u043E\u0439 \u0441\u0438\u0442\u0443\u0430\u0446\u0438\u0438,
-    \u0442\u043E \u0442\u044B \u0443\u0436\u0435 \u043D\u0430\u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0443
-    \u0436\u0438\u0432\u043E\u0439!"
-  - "\t\u041D\u0430\u043F\u043E\u043F\u043E\u043B\u0430\u043C \u0431\u044B \u0442\u0435\u0431\u044F
-    \u0440\u0430\u0437\u043E\u0440\u0432\u0430\u043B! (\u0414\u0443\u043C\u0430\u0435\u0442,
-    \u043E\u0442\u0432\u0435\u0434\u044F \u0432\u0437\u0433\u043B\u044F\u0434 \u0432
-    \u0441\u0442\u043E\u0440\u043E\u043D\u0443)"
+    \u043D\u0443\u0436\u043D\u043E \u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0445\u043E\u0442\u044C
+    \u0447\u0442\u043E-\u0442\u043E..."
+  - "                 \u041F\u0435\u0441\u043E\u043A \u0441 \u043C\u044B\u0441\u043B\u0435\u0439
+    \u0441\u0431\u0438\u0432\u0430\u0435\u0442. \u0422\u0443\u0442 \u0438 \u043D\u0430
+    \u043D\u043E\u0433\u0430\u0445 \u0441\u0442\u043E\u044F\u0442\u044C \u0442\u0440\u0443\u0434\u043D\u043E,
+    \u0447\u0442\u043E \u0443\u0436 \u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C
+    \u043E \u0441\u043A\u043B\u0430\u0434\u043D\u043E\u0439 \u0440\u0435\u0447\u0438 "
+  - "\t(\u0414\u0443\u043C\u0430\u0435\u0442) \u0417\u0432\u0443\u0447\u0438\u0442
+    \u0431\u0440\u0435\u0434\u043E\u0432\u043E, \u043D\u043E \u043C\u043E\u0436\u0435\u0442
+    \u0438 \u0441\u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C "
+  - "\t\u0427\u0442\u043E \u0436, \u0445\u043E\u0440\u043E\u0448\u043E"
   - "\t\u0421\u0443\u0434\u044F \u043F\u043E \u0442\u0432\u043E\u0435\u043C\u0443
     \u0441\u043F\u043E\u043A\u043E\u0439\u0441\u0442\u0432\u0438\u044E \u2013 \u0432\u043E\u043F\u0440\u043E\u0441
     \u0432\u044B\u0436\u0438\u0432\u0430\u043D\u0438\u044F \u0442\u0435\u0431\u044F
@@ -5232,43 +5304,32 @@ MonoBehaviour:
     \u0431\u043E\u043B\u044C\u0448\u043E\u0433\u043E \u0442\u0440\u0443\u0434\u0430."
   - "\t\u041D\u043E \u043A\u0430\u043A \u0442\u044B \u0437\u043D\u0430\u0435\u0448\u044C,
     \u0437\u0430 \u043A\u0430\u0436\u0434\u0443\u044E \u0443\u0441\u043B\u0443\u0433\u0443
-    \u043D\u0443\u0436\u043D\u043E \u043F\u043B\u0430\u0442\u0438\u0442\u044C \u0432\u043E\u0442
+    \u043D\u0443\u0436\u043D\u043E \u043F\u043B\u0430\u0442\u0438\u0442\u044C, \u0432\u043E\u0442
     \u0438 \u0442\u0435\u0431\u0435 \u043F\u0440\u0438\u0434\u0435\u0442\u0441\u044F
     \u043A\u043E\u0435-\u0447\u0442\u043E \u0434\u043B\u044F \u043C\u0435\u043D\u044F
     \u0441\u0434\u0435\u043B\u0430\u0442\u044C."
-  - "\t\u0421\u043E\u043C\u043D\u0435\u0432\u0430\u044E\u0441\u044C \u044F \u0432
-    \u0442\u0432\u043E\u0438\u0445 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044F\u0445
-    \u043F\u0440\u0438\u0434\u0443\u043C\u044B\u0432\u0430\u0442\u044C \u0437\u0430\u0434\u0430\u043D\u0438\u044F,
-    \u043C\u043D\u0435 \u043D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438
-    \u0432\u043E\u043B\u0448\u0435\u0431\u043D\u044B\u0439 \u043A\u0430\u043C\u0435\u043D\u044C?!"
-  - "\t\u041D\u0435\u0442, \u043A\u043E\u043D\u0435\u0447\u043D\u043E \u0436\u0435
-    \u043D\u0435\u0442! \u041D\u0435\u043F\u043E\u0434\u0430\u043B\u0435\u043A\u0443
-    \u043E\u0442\u0441\u044E\u0434\u0430 \u0435\u0441\u0442\u044C \u043F\u0435\u0447\u0430\u0442\u044C,
-    \u0438 \u043D\u0430 \u044D\u0442\u043E\u0439 \u043F\u043B\u0430\u043D\u0435\u0442\u0435
-    \u043B\u0438\u0448\u044C \u0442\u044B \u0441\u043F\u043E\u0441\u043E\u0431\u0435\u043D
-    \u0435\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u044C..."
-  - "\t\u042F \u0441\u043E\u0433\u043B\u0430\u0441\u0435\u043D, \u0432\u0435\u0434\u0438
-    \u043A \u0441\u0432\u043E\u0435\u0439 \u043F\u0435\u0447\u0430\u0442\u0438!"
+  - "\t\u041D\u0430\u0439\u0442\u0438 \u043A\u043E\u0448\u043A\u0443, \u0441\u0434\u0435\u043B\u0430\u0442\u044C
+    \u0431\u043E\u0440\u0449, \u0441\u0442\u0430\u043D\u0446\u0435\u0432\u0430\u0442\u044C
+    \u043F\u043E\u043B\u044C\u043A\u0443?"
+  - "\t\u041D\u0435\u0442, \u043F\u043E \u043A\u0440\u0430\u0439\u043D\u0435\u0439
+    \u043C\u0435\u0440\u0435, \u043D\u0435 \u0441\u0435\u0433\u043E\u0434\u043D\u044F.
+    \u041D\u0435\u043F\u043E\u0434\u0430\u043B\u0435\u043A\u0443 \u043E\u0442\u0441\u044E\u0434\u0430
+    \u0435\u0441\u0442\u044C \u043F\u0435\u0447\u0430\u0442\u044C, \u0438 \u043D\u0430
+    \u044D\u0442\u043E\u0439 \u043F\u043B\u0430\u043D\u0435\u0442\u0435 \u043B\u0438\u0448\u044C
+    \u0442\u044B \u0441\u043F\u043E\u0441\u043E\u0431\u0435\u043D \u0435\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u044C..."
+  - "\t\u041A\u0430\u043A \u043B\u0435\u0441\u0442\u043D\u043E. \u042F \u0441\u043E\u0433\u043B\u0430\u0441\u0435\u043D,
+    \u0432\u0435\u0434\u0438 \u043A \u0441\u0432\u043E\u0435\u0439 \u043F\u0435\u0447\u0430\u0442\u0438!"
   - "\t\u041D\u0435 \u0432\u0441\u0435 \u0442\u0430\u043A \u043F\u0440\u043E\u0441\u0442\u043E,
-    \u043C\u043E\u0439 \u0434\u0440\u0443\u0433, \u0438\u0434\u0438 \u0432\u043F\u0435\u0440\u0435\u0434
-    \u0438 \u043F\u0440\u0438\u0431\u0443\u0434\u0435\u0448\u044C \u043A \u0432\u0435\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u043C\u0443
-    \u043C\u043E\u043D\u0443\u043C\u0435\u043D\u0442\u0443, \u0433\u0434\u0435 \u0442\u044B
-    \u0431\u0443\u0434\u0435\u0448\u044C \u0434\u043E\u043B\u0436\u0435\u043D \u043D\u0430\u0439\u0442\u0438
-    \"\u043A\u0438\u043D\u0436\u0430\u043B\u044B \u0438\u0441\u0442\u0438\u043D\u044B\"."
+    \u043C\u043E\u0439 \u0434\u0440\u0443\u0433,  \u0434\u043B\u044F \u043D\u0430\u0447\u0430\u043B\u0430
+    \u043D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438 \u043F\u0430\u0440\u0443
+    \u043A\u0438\u043D\u0436\u0430\u043B\u043E\u0432. \u0411\u0435\u0437 \u043D\u0438\u0445,
+    \u043F\u0435\u0447\u0430\u0442\u044C \u043D\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u044C"
   - "\t\u042F \u0432\u0441\u0442\u0440\u0435\u0447\u0443\u0441\u044C \u0441 \u0442\u043E\u0431\u043E\u0439,
-    \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E \u0442\u044B \u043D\u0430\u0439\u0434\u0435\u0448\u044C
-    \u0432\u0441\u0435 \u0442\u0440\u0438 \u043A\u0438\u043D\u0436\u0430\u043B\u0430."
-  - "\t\u0427\u0442\u043E \u0436, \u043C\u043E\u0433\u0443 \u043B\u0438 \u044F \u0438\u0434\u0442\u0438
-    \u0432 \u044D\u0442\u043E\u0442 \u0434\u043E\u043B\u043A\u0438\u0439 \u043F\u0443\u0442\u044C?"
-  - "\t\u041A\u043E\u043D\u0435\u0447\u043D\u043E \u0436\u0435 \u043D\u0435\u0442!
-    \u042F \u0434\u043E\u043B\u0436\u0435\u043D \u0443\u0434\u043E\u0441\u0442\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0441\u044F
-    \u0432 \u0442\u0432\u043E\u0438\u0445 \u0441\u0438\u043B\u0430\u0445, \u043F\u043E\u043C\u043E\u0433\u0438
-    \u0440\u0435\u0448\u0438\u0442\u044C \u044D\u0442\u0443 \u043D\u0435\u043F\u043E\u0434\u0441\u0438\u043B\u044C\u043D\u0443\u044E
-    \u043C\u043D\u0435 \u0437\u0430\u0434\u0430\u0447\u0443!"
-  - "\t\u0427\u0442\u043E \u0436\u0435, \u0434\u0430\u0432\u0430\u0439 \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0435\u043C..."
+    \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E \u0442\u044B \u0438\u0445
+    \u0434\u043E\u0431\u0443\u0434\u0435\u0448\u044C, \u0443\u0434\u0430\u0447\u0438"
   UseDoor: 0
   doorManager: {fileID: 0}
-  UseSceneChanger: 1
+  UseSceneChanger: 0
   sc_changer: {fileID: 332756822}
   twisedialog: 0
   theother: {fileID: 0}
@@ -6881,8 +6942,8 @@ GameObject:
   - component: {fileID: 1297514201}
   - component: {fileID: 1297514200}
   - component: {fileID: 1297514199}
-  - component: {fileID: 1297514202}
   - component: {fileID: 1297514203}
+  - component: {fileID: 1297514202}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -6948,8 +7009,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297514198}
-  m_LocalRotation: {x: 0.15623775, y: -0.6960374, z: 0.15934989, w: 0.6824437}
-  m_LocalPosition: {x: -20.94, y: 8.02, z: -10.13}
+  m_LocalRotation: {x: 0.2694575, y: -0.4353262, z: 0.13836277, w: 0.8477851}
+  m_LocalPosition: {x: -23.71082, y: 8.562663, z: -12.228862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6964,13 +7025,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1297514198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556a553dd8b4082479d89553f7b4a433, type: 3}
+  m_Script: {fileID: 11500000, guid: bf2d554295334274ca1d37d223b83ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pers: {fileID: 2132384458}
-  offset: {x: -0.2, y: -0.2, z: -0.2}
-  rotSpeed: 0
-  currentZoom: 10
+  showMain: 0
+  target: {fileID: 2132384458}
+  offset: {x: 1, y: 1, z: -1}
+  showSmooth: 0
+  smoothness: 0.1
+  useZoom: 1
+  zoomSpeed: 20
+  minZoom: 1.2
+  maxZoom: 2.7
+  useOrbit: 1
+  rotationSpeed: 40
 --- !u!95 &1297514203
 Animator:
   serializedVersion: 3
@@ -8084,64 +8152,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d400a97b0cac37b45b0ada00161bbb5d, type: 3}
---- !u!1 &1608550090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1608550093}
-  - component: {fileID: 1608550092}
-  - component: {fileID: 1608550091}
-  m_Layer: 0
-  m_Name: Target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1608550091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608550090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa22a0cfbe31d064ba933a30c28f2950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0.85
---- !u!65 &1608550092
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608550090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.230278, y: 2.3733978, z: 15.638929}
-  m_Center: {x: -15.733303, y: 13.954826, z: -0.76320934}
---- !u!4 &1608550093
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608550090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.961975, y: -6.125, z: -9.489897}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 532093338}
-  m_RootOrder: 63
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1612427099 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5318860690346034933, guid: 87ba5189414b685478603ace4318730e,
@@ -9940,7 +9950,12 @@ PrefabInstance:
     - target: {fileID: 1244525204324953418, guid: 9687352c16e05354bb2ab37e13c3f7f6,
         type: 3}
       propertyPath: Rotspeed
-      value: 160
+      value: 1212
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244525204324953418, guid: 9687352c16e05354bb2ab37e13c3f7f6,
+        type: 3}
+      propertyPath: invert_rot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1244525204324953422, guid: 9687352c16e05354bb2ab37e13c3f7f6,
         type: 3}
@@ -11846,12 +11861,12 @@ PrefabInstance:
     - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
         type: 3}
       propertyPath: NUM1
-      value: 1010
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
         type: 3}
       propertyPath: NUM2
-      value: 101
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
         type: 3}
@@ -11862,6 +11877,61 @@ PrefabInstance:
         type: 3}
       propertyPath: sumQ
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: hgj
+      value: -114
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: nhtrh.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: nhtrh.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: answ_q1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: ShowInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: length
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: ShowAnswer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: q2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: transformQ
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: q1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 806962848125972387, guid: 07c5b03eda52de942a33becf46d18ac1,
+        type: 3}
+      propertyPath: sum
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 806962848221962648, guid: 07c5b03eda52de942a33becf46d18ac1,
         type: 3}

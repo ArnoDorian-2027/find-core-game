@@ -1585,13 +1585,83 @@ MonoBehaviour:
   m_GameObject: {fileID: 776513995}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556a553dd8b4082479d89553f7b4a433, type: 3}
+  m_Script: {fileID: 11500000, guid: bf2d554295334274ca1d37d223b83ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pers: {fileID: 104212834}
-  offset: {x: 0.1, y: -0.2, z: 0.3}
-  rotSpeed: 0
-  currentZoom: 15
+  showMain: 0
+  target: {fileID: 104212834}
+  offset: {x: 1, y: 1, z: -1}
+  showSmooth: 0
+  smoothness: 0.1
+  showZoom: 0
+  useZoom: 1
+  zoomSpeed: 20
+  minZoom: 2
+  maxZoom: 2.7
+  showOrbitRotation: 0
+  useOrbit: 1
+  rotationSpeed: 40
+--- !u!1 &796354210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796354212}
+  - component: {fileID: 796354211}
+  m_Layer: 0
+  m_Name: Navigation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796354211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796354210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3df27b9289d1e8c4fb82e0df4f4673ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 86a3cff6a9624024397212feac62c9c0, type: 2}
+  m_LastPosition: {x: 0, y: 0, z: 0}
+  m_LastRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!4 &796354212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796354210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803344384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2290,6 +2360,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1783340798}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1058817736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1058817738}
+  - component: {fileID: 1058817737}
+  - component: {fileID: 1058817739}
+  m_Layer: 0
+  m_Name: Scener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1058817737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058817736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05e4245247219b4eab1e4ca6141f650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 5
+  USEFULLY: 0
+--- !u!4 &1058817738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058817736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.97, y: 12.8359375, z: -5.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1058817739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058817736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.288042, y: 2.5930042, z: 9.613039}
+  m_Center: {x: -2.5380116, y: -5.143529, z: -0.2834978}
 --- !u!1 &1060632563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,6 +4092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NAME: 
+  done: 0
   q1: 2
   q2: 10
   sumQ: 10
@@ -4641,6 +4771,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041033414}
   m_CullTransparentMesh: 0
+--- !u!1 &2066993101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2066993103}
+  - component: {fileID: 2066993102}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2066993102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066993101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c94e6dc5f590614aa19b6cfd282ca82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: []
+--- !u!4 &2066993103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066993101}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2078789544
 GameObject:
   m_ObjectHideFlags: 0
@@ -5003,24 +5177,22 @@ MonoBehaviour:
     \u043E\u043D \u043E\u0431 \u044D\u0442\u043E\u043C \u0437\u043D\u0430\u0435\u0442?!"
   - "\t\u0422\u0435\u0431\u0435 \u043B\u0443\u0447\u0448\u0435 \u0437\u0430\u0442\u043A\u043D\u0443\u0442\u044C\u0441\u044F\u2026"
   - "\t\u0410 \u0442\u0435\u0431\u0435 \u043D\u0430\u0443\u0447\u0438\u0442\u044C\u0441\u044F
-    \u043C\u0430\u043D\u0435\u0440\u0430\u043C. \u0410\u0445 \u0434\u0430, \u043A\u0430\u043A\u0438\u043C
-    \u0436\u0435 \u043E\u0431\u0440\u0430\u0437\u043E\u043C? \u0412\u0435\u0434\u044C
-    \u0431\u0435\u0434\u043D\u044B\u0445 \u0440\u043E\u0434\u0438\u0442\u0435\u043B\u0435\u0439
+    \u043C\u0430\u043D\u0435\u0440\u0430\u043C. \u0410\u0445, \u0442\u043E\u0447\u043D\u043E,
+    \u043A\u0430\u043A\u0438\u043C \u0436\u0435 \u043E\u0431\u0440\u0430\u0437\u043E\u043C?
+    \u0412\u0435\u0434\u044C \u0431\u0435\u0434\u043D\u044B\u0445 \u0440\u043E\u0434\u0438\u0442\u0435\u043B\u0435\u0439
     \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u043E\u0442\u043C\u0435\u043D\u044F\u043B. "
   - "\t\u041D\u0435\u0449\u0430\u0434\u043D\u0430\u044F \u0431\u043E\u043B\u044C
     \u0432\u043C\u0435\u0441\u0442\u043E \u043C\u0435\u0434\u0438\u0446\u0438\u043D\u044B,
     \u043F\u043E\u0431\u043E\u0438 \u0432\u043C\u0435\u0441\u0442\u043E \u043B\u0430\u0441\u043E\u043A
-    \u0438 \u043B\u044E\u0431\u0432\u0438 - \u043B\u0438\u0448\u044C \u0441\u043C\u0435\u0440\u0442\u044C
-    \u0436\u0434\u0430\u043B\u0430 \u0442\u0435\u0431\u044F \u043D\u0430 \u043F\u043E\u0440\u043E\u0433\u0435
-    \u0440\u043E\u0434\u043D\u043E\u0433\u043E \u0434\u043E\u043C\u0430."
+    \u0438 \u043B\u0438\u0448\u044C \u0441\u043C\u0435\u0440\u0442\u044C, \u0436\u0434\u0430\u0432\u0448\u0430\u044F
+    \u0442\u0435\u0431\u044F \u043D\u0430 \u043F\u043E\u0440\u043E\u0433\u0435 \u0440\u043E\u0434\u043D\u043E\u0433\u043E
+    \u0434\u043E\u043C\u0430."
   - "\t\u042F \u0441\u043A\u0430\u0437\u0430\u043B \u0442\u0435\u0431\u0435 \u0437\u0430\u0442\u043A\u043D\u0443\u0442\u044C\u0441\u044F\u2026 "
-  - "\t\u041D\u0435\u0443\u0436\u0442\u043E \u0440\u0435\u0448\u0438\u043B \u043F\u043E\u0438\u0433\u0440\u0430\u0442\u044C
-    \u0432 \u0434\u0440\u0443\u0433\u0430 \u0434\u0435\u0442\u0441\u0442\u0432\u0430?
-    \u041D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0433\u043E \u0433\u0435\u0440\u043E\u044F
-    \u2013 \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u0441 \u0430\u043C\u0431\u0438\u0446\u0438\u044F\u043C\u0438\u2026
-    \u0412\u0441\u0435 \u0435\u0449\u0435 \u043D\u0435\u0443\u0434\u043E\u0431\u043D\u043E
+  - "\t\u0413\u043B\u044F\u0434\u0438\u0442\u0435 \u0432 \u043A\u043E\u043C \u043F\u0440\u043E\u0441\u043D\u0443\u043B\u0441\u044F
+    \u0433\u0435\u0440\u043E\u0439! \u041F\u0440\u0430\u0432\u0434\u0430, \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E
+    \u043F\u043E\u0445\u0434\u043D\u043E. \u0412\u0441\u0435 \u0435\u0449\u0435 \u043D\u0435\u0443\u0434\u043E\u0431\u043D\u043E
     \u043D\u0435\u0441\u0442\u0438 \u0431\u0440\u0435\u043C\u044F \u043D\u0435\u0443\u0434\u0430\u0447\u043D\u0438\u043A\u0430!?...
-    \u0436\u0430\u043B\u043A\u043E\u0435 \u0437\u0440\u0435\u043B\u0438\u0449\u0435."
+    \u0416\u0430\u043B\u043A\u043E\u0435 \u0437\u0440\u0435\u043B\u0438\u0449\u0435."
   - "\t\u0414\u043E \u0442\u0435\u0431\u044F \u0432\u0438\u0434\u043D\u043E \u043D\u0435
     \u0434\u043E\u0445\u043E\u0434\u044F\u0442 \u043C\u043E\u0438 \u0441\u043B\u043E\u0432\u0430\u2026"
   - "\t\u0410 \u0434\u043E \u0442\u0435\u0431\u044F \u2013 \u0440\u0430\u0437\u0443\u043C\u043D\u044B\u0435
@@ -5060,7 +5232,7 @@ MonoBehaviour:
   UseDoor: 0
   doorManager: {fileID: 0}
   UseSceneChanger: 1
-  sc_changer: {fileID: 0}
+  sc_changer: {fileID: 1058817737}
   twisedialog: 0
   theother: {fileID: 0}
   Del: 0

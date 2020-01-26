@@ -16,14 +16,14 @@ public class CadSceneController : MonoBehaviour
         slide.sprite = Slides[0];
         animator.SetBool("Open", true);
         Pers.GetComponent<PersControls>().enabled = false;
-        if (cammain == true) { Camera.main.GetComponent<CameraZoom>().enabled = false; }
+        if (cammain == true) { Camera.main.GetComponent<CameraController>().enabled = false; }
         i++;
     }
     void Out()
     {
         animator.SetBool("Open", false);
         Pers.GetComponent<PersControls>().enabled = true;
-        if (cammain == true) { Camera.main.GetComponent<CameraZoom>().enabled = true; }
+        if (cammain == true) { Camera.main.GetComponent<CameraController>().enabled = true; }
         Destroy(this.gameObject);     
     }
     void Update()
