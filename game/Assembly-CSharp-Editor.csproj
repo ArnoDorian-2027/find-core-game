@@ -45,52 +45,71 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Other\Imports\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
-     <Compile Include="Assets\Other\Imports\NavMeshComponents\Editor\NavMeshLinkEditor.cs" />
-     <Compile Include="Assets\Other\Imports\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
-     <Compile Include="Assets\Other\Imports\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
-     <Compile Include="Assets\Other\Imports\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\DecoratorDrawers\HorizontalLineDecoratorDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\DecoratorDrawers\InfoBoxDecoratorDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\NaughtyInspector.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\AllowNestingPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\DropdownPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\EnumFlagsPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\MinMaxSliderPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\ProgressBarPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\PropertyDrawerBase.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\ReadOnlyPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\ResizableTextAreaPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\ShowAssetPreviewPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers\TagPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers_SpecialCase\ReorderableListPropertyDrawer.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyDrawers_SpecialCase\SpecialCasePropertyDrawerBase.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyValidators\MaxValuePropertyValidator.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyValidators\MinValuePropertyValidator.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyValidators\PropertyValidatorBase.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyValidators\RequiredPropertyValidator.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\PropertyValidators\ValidateInputPropertyValidator.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\Utility\NaughtyEditorGUI.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\Utility\PropertyUtility.cs" />
+     <Compile Include="Assets\Other\NaughtyAttributes\Scripts\Editor\Utility\ReflectionUtility.cs" />
+     <None Include="Assets\Other\NaughtyAttributes\Scripts\Editor\NaughtyAttributes.Editor.asmdef" />
  <Reference Include="UnityEditor.TestRunner">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -288,22 +307,22 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

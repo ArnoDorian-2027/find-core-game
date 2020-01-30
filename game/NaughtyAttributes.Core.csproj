@@ -45,32 +45,36 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\ConditionOperator.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawConditionAttributes\DrawConditionAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawConditionAttributes\HideIfAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawConditionAttributes\ShowIfAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ButtonAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\DisableIfAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\AllowNestingAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\DrawerAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\DropdownAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\EnableIfAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\LabelAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\EnumFlagsAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\HorizontalLineAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\InfoBoxAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\MinMaxSliderAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ProgressBarAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ReadOnlyAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ReorderableListAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ResizableTextAreaAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ShowAssetPreviewAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ShowNativePropertyAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\ShowNonSerializedFieldAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\SliderAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes\TagAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\GroupAttributes\BoxGroupAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\GroupAttributes\GroupAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\InfoBoxAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes_SpecialCase\ButtonAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes_SpecialCase\ReorderableListAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes_SpecialCase\ShowNativePropertyAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes_SpecialCase\ShowNonSerializedFieldAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\DrawerAttributes_SpecialCase\SpecialCaseDrawerAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\INaughtyAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\BoxGroupAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\DisableIfAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\EnableIfAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\EnableIfAttributeBase.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\HideIfAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\LabelAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\MetaAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\OnValueChangedAttribute.cs" />
-     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\NaughtyAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\ShowIfAttribute.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\MetaAttributes\ShowIfAttributeBase.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\Utility\EColor.cs" />
+     <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\Utility\EConditionOperator.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\ValidatorAttributes\MaxValueAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\ValidatorAttributes\MinValueAttribute.cs" />
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\ValidatorAttributes\RequiredAttribute.cs" />
@@ -78,10 +82,10 @@
      <Compile Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\ValidatorAttributes\ValidatorAttribute.cs" />
      <None Include="Assets\Other\Imports\NaughtyAttributes\Scripts\Core\NaughtyAttributes.Core.asmdef" />
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -279,19 +283,19 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>C:/Users/Роман/Desktop/Unity/GitHub/find-core-game-master/game/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Роман/Desktop/Unity/find-core-game/game/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

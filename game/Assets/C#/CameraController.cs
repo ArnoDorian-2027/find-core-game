@@ -17,9 +17,12 @@ public class CameraController : MonoBehaviour
 
         [BoxGroup("Zoom Options")] [SerializeField] bool useZoom = true;
         [BoxGroup("Zoom Options")] [ShowIf("useZoom")] [SerializeField] float zoomSpeed = 5f;
-        [BoxGroup("Zoom Options")][ShowIf("useZoom")] [SerializeField] float minZoom = 0, maxZoom = 10;
+        [BoxGroup("Zoom Options")] [ShowIf("useZoom")] [SerializeField] float minZoom = 0, maxZoom = 10;
 
         [BoxGroup("Orbit Rotation Options")] [SerializeField] bool useOrbit = true;
+        [BoxGroup("Orbit Rotation Options")] [ShowIf("useOrbit")] [SerializeField] bool TargetAtButton = false;
+        [BoxGroup("Orbit Rotation Options")] [ShowIf(EConditionOperator.And, "useOrbit", "TargetAtButton")] [SerializeField] KeyCode OrbitButton = KeyCode.None;
+        [BoxGroup("Orbit Rotation Options")] [ShowIf(EConditionOperator.And, "useOrbit", "TargetAtButton")] [SerializeField] bool OnClickOrbit = false;
         [BoxGroup("Orbit Rotation Options")] [ShowIf("useOrbit")] [SerializeField] float rotationSpeed = 10f;
     //private
         private float currenrentZoom = 0, currenrentRotation = 0;
@@ -36,7 +39,7 @@ public class CameraController : MonoBehaviour
         else { endPosition = target.position + offset; } 
         transform.position = Vector3.Lerp(transform.position, endPosition, smoothness);
         
-        if (Input.GetMouseButton(1) && useOrbit) 
+        if ( (OrbitButton != KeyCode.None && Input.GetKey(OrbitButton) && useOrbit && TargetAtButton) || (OnClickOrbit && Input.GetMouseButton(1) && useOrbit && TargetAtButton) || (OrbitButton == KeyCode.None && OnClickOrbit == false && useOrbit) ) 
         { 
             Quaternion turnAxis = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime, Vector3.up);
             offset = turnAxis * offset;
