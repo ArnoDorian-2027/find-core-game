@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NaughtyAttributes;
 using System.IO;
 using TMPro;
 
 public class Graphs : MonoBehaviour
 {
     #region init
-        // public
-        public bool done = false;
-        // Visible
-        [SerializeField] Image Graph;
-        [SerializeField] Sprite source;
-        [SerializeField] string answer = null, NAME = "default";
-        int i = -1;
+        //visible
+            [BoxGroup("Main Settings")] [SerializeField] Image Graph;
+            [BoxGroup("Main Settings")] [SerializeField] Sprite source;
+            [BoxGroup("Main Settings")] [SerializeField] string answer = null, NAME = "default";
+        //private
+            [HideInInspector]public bool done = false;
+            int i = -1;
     #endregion
+
     private void Start() 
     {
         if(File.Exists("name.txt"))

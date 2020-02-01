@@ -10,12 +10,14 @@ public class DialogScript : MonoBehaviour
     #region Initalize
     //public
     //visible
+            [ReorderableList] public ReplicData[] replicDatas;
             [BoxGroup("Main")] [SerializeField] bool ShowMain = false;
             [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] PersControls p_controler = null;
             [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] Animator anim = null;
             [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] Image im = null;
             [BoxGroup("Main")] [ShowIf("ShowMain")] [SerializeField] TextMeshProUGUI replic = null, Name = null;
             [BoxGroup("Main")] [ShowIf("ShowMain")] public bool USEFULLY = false;
+
 
             [BoxGroup("Replics")] [SerializeField] bool ShowReplics = false;
             [BoxGroup("Replics")] [ShowIf("ShowReplics")] [SerializeField] float WordDelay = 0f;
@@ -26,17 +28,22 @@ public class DialogScript : MonoBehaviour
             [BoxGroup("Activate door at end")] [SerializeField] bool UseDoor = false;
             [BoxGroup("Activate door at end")] [ShowIf("UseDoor")] [SerializeField] DoorController doorManager = null;
 
+
             [BoxGroup("Activate scene changer at end")] [SerializeField] bool UseSceneChanger = false;
             [BoxGroup("Activate scene changer at end")] [ShowIf("UseSceneChanger")] [SerializeField] SceneChanger sc_changer = null;
         
+
             [BoxGroup("Activate another dialog at end")] [SerializeField] bool twisedialog = false;
             [BoxGroup("Activate another dialog at end")] [ShowIf("twisedialog")] [SerializeField] GameObject theother = null;
         
+
             [BoxGroup("Delete objects at end")] [SerializeField] bool Del = false;
             [BoxGroup("Delete objects at end")] [ShowIf("Del")] [SerializeField] GameObject Delete = null;
 
+
             [BoxGroup("Enable objects at end")]  [SerializeField] bool Enab = false;
             [BoxGroup("Enable objects at end")] [ShowIf("Enab")] [SerializeField] GameObject Enable = null;
+        
         
             [BoxGroup("Activate Lerp objects at end")] [SerializeField] bool LerpUse = false;
             [BoxGroup("Activate Lerp objects at end")] [ShowIf("LerpUse")] [SerializeField] Lerp Lerp = null;
@@ -65,7 +72,7 @@ public class DialogScript : MonoBehaviour
         if (USEFULLY)
         {
             anim.SetBool("isOpen", false);
-            p_controler.blockmove = false;
+            p_controler.enabled = true;
             if (twisedialog == true) { this.gameObject.SetActive(false); theother.SetActive(true); }
             else { Destroy(this); }
             if (UseDoor == true) { doorManager.USEFULLY = true; }
@@ -98,7 +105,7 @@ public class DialogScript : MonoBehaviour
         if (USEFULLY == true)
         {
             p_controler.AnimState = 0;
-            p_controler.blockmove = true;
+            p_controler.enabled = false;
             anim.SetBool("isOpen", true);
             NextReplic();  
         }

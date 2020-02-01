@@ -9,21 +9,21 @@ public class PointsCounter : MonoBehaviour
     //visible
         [Header("Bound Settings")] [Space(-5)]
             [SerializeField] bool UseBounds = false;
-            [BoxGroup("1")] [SerializeField] bool UseBound1 = false;
-            [BoxGroup("1")] [ShowIf("UseBound1")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds1;
-            [BoxGroup("1")] [ShowIf("UseBound1")] [SerializeField] int AnimId1 = 0;
+            [BoxGroup("1")] [ShowIf("UseBounds")] [SerializeField] bool UseBound1 = false;
+            [BoxGroup("1")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound1")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds1;
+            [BoxGroup("1")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound1")] [SerializeField] int AnimId1 = 0;
 
-            [BoxGroup("2")] [SerializeField] bool UseBound2 = false;
-            [BoxGroup("2")][ShowIf("UseBound2")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds2;
-            [BoxGroup("2")] [ShowIf("UseBound2")] [SerializeField] int AnimId2 = 0;
+            [BoxGroup("2")] [ShowIf("UseBounds")] [SerializeField] bool UseBound2 = false;
+            [BoxGroup("2")][ShowIf(EConditionOperator.And, "UseBounds", "UseBound2")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds2;
+            [BoxGroup("2")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound2")] [SerializeField] int AnimId2 = 0;
 
-            [BoxGroup("3")] [SerializeField] bool UseBound3 = false;
-            [BoxGroup("3")] [ShowIf("UseBound3")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds3;
-            [BoxGroup("3")] [ShowIf("UseBound3")] [SerializeField] int AnimId3 = 0;
+            [BoxGroup("3")] [ShowIf("UseBounds")] [SerializeField] bool UseBound3 = false;
+            [BoxGroup("3")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound3")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds3;
+            [BoxGroup("3")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound3")] [SerializeField] int AnimId3 = 0;
 
-            [BoxGroup("4")]  [SerializeField] bool UseBound4 = false;
-            [BoxGroup("4")] [ShowIf("UseBound4")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds4;
-            [BoxGroup("4")] [ShowIf("UseBound4")] [SerializeField] int AnimId4 = 0;
+            [BoxGroup("4")] [ShowIf("UseBounds")]  [SerializeField] bool UseBound4 = false;
+            [BoxGroup("4")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound4")] [MinMaxSlider(1, 60)] [SerializeField] Vector2 bounds4;
+            [BoxGroup("4")] [ShowIf(EConditionOperator.And, "UseBounds", "UseBound4")] [SerializeField] int AnimId4 = 0;
             [Button("Reset Bounds")]
             void Button1()
             {

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.Animation;
+using NaughtyAttributes;
+
 public class SceneChanger : MonoBehaviour
 {
-    [Header("Main Options")] [Space(-5)]
-    [SerializeField] private int ID = 0;
-    public bool USEFULLY = false;
+    [BoxGroup("Main Settings")] [SerializeField] int ID = 0;
+    [BoxGroup("Main Settings")] [SerializeField] float Delay = 0.2f;
+    [BoxGroup("Main Settings")] public bool USEFULLY = false;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && USEFULLY == true)  
         {
-            StartCoroutine(change(0.2f));
+            StartCoroutine(change(Delay));
         }
     }
     IEnumerator change(float delay)

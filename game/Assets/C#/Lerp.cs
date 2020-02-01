@@ -2,27 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
+
 public class Lerp : MonoBehaviour
 {
 	#region Init
 	//visible
-		[Header("Main Options")] [Space(-5)]
-			[SerializeField] bool ShowMain = false;
-			[ShowIf("ShowMain")] public bool USEFULLY = false;
-			[ShowIf("ShowMain")] [SerializeField] KeyCode Button;
-			[ShowIf("ShowMain")] [SerializeField] float resistance, increment;
-			[ShowIf("ShowMain")] [SerializeField] Transform start, end;
+		[BoxGroup("Main Settings")] [SerializeField] bool ShowMain = false;
+		[BoxGroup("Main Settings")] [ShowIf("ShowMain")] public bool USEFULLY = false;
+		[BoxGroup("Main Settings")] [ShowIf("ShowMain")] [SerializeField] KeyCode Button;
+		[BoxGroup("Main Settings")] [ShowIf("ShowMain")] [SerializeField] float resistance, increment;
+		[BoxGroup("Main Settings")] [ShowIf("ShowMain")] [SerializeField] Transform start, end;
 		
-		[Header("Destroer Settings")] [Space(-5)]
-			[SerializeField] bool RemoveAtEnd = false;
+		[BoxGroup("Remover Settings")] [SerializeField] bool RemoveAtEnd = false;
 
-		[Header("Door Settings")] [Space(-5)]
-			[SerializeField] bool UseDoor = false;
-			[ShowIf("UseDoor")] [SerializeField] DoorController door;
+		[BoxGroup("Door Settings")] [SerializeField] bool UseDoor = false;
+		[BoxGroup("Door Settings")] [ShowIf("UseDoor")] [SerializeField] DoorController door;
 		
-		[Header("Dialog Settings")] [Space(-5)]
-			[SerializeField] bool UseDialog = false;
-			[ShowIf("UseDialog")] [SerializeField] DialogScript dialog;
+		[BoxGroup("Dialog Settings")] [SerializeField] bool UseDialog = false;
+		[BoxGroup("Dialog Settings")] [ShowIf("UseDialog")] [SerializeField] DialogScript dialog;
 	//private
 		private float t = 0;
 	//button

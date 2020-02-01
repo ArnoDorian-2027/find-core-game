@@ -4,12 +4,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using System.IO;
+using NaughtyAttributes;
 
 public class NameHolder : MonoBehaviour
 {
     #region init
-        string name = null;
-        [SerializeField] int sceneID = 0;
+    //visible
+        [BoxGroup("Main Settings")] [SerializeField] int sceneID = 0;
+    //зкшмфеу
+        string name = "";
     #endregion
 
     public void Save(TMP_InputField inputField)

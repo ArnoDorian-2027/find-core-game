@@ -1,29 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CadSceneController : MonoBehaviour
 {
-    [SerializeField] Animator animator = null;
-    [SerializeField] Image slide = null;
-    [SerializeField] GameObject Pers = null;
-    [SerializeField] bool cammain = true;
-    [SerializeField] Sprite[] Slides = null;
-    int i = -1;
+    #region init
+    //visible
+        [BoxGroup("Main Settings")] [SerializeField] Animator animator = null;
+        [BoxGroup("Main Settings")] [SerializeField] Image slide = null;
+        [BoxGroup("Main Settings")] [SerializeField] GameObject Pers = null;
+        [BoxGroup("Main Settings")] [SerializeField] bool CamМain = true;
+
+        [BoxGroup("Slides Settings")][SerializeField] Sprite[] Slides = null;
+    //private
+        int i = -1;
+    #endregion
+    
     void OnTriggerEnter(Collider other)
     {
         slide.sprite = Slides[0];
         animator.SetBool("Open", true);
         Pers.GetComponent<PersControls>().enabled = false;
-        if (cammain == true) { Camera.main.GetComponent<CameraController>().enabled = false; }
+        if (CamМain == true) { Camera.main.GetComponent<CameraController>().enabled = false; }
         i++;
     }
     void Out()
     {
         animator.SetBool("Open", false);
         Pers.GetComponent<PersControls>().enabled = true;
-        if (cammain == true) { Camera.main.GetComponent<CameraController>().enabled = true; }
+        if (CamМain == true) { Camera.main.GetComponent<CameraController>().enabled = true; }
         Destroy(this.gameObject);     
     }
     void Update()

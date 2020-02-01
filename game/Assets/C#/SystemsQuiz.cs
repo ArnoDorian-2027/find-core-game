@@ -10,7 +10,7 @@ using NaughtyAttributes;
 public class SystemsQuiz : MonoBehaviour
 {  
     #region  options
-    //visible/+
+    //visible
         [HideInInspector] public string NAME = null;
         [HideInInspector] public bool done = false;
         [BoxGroup("Main Settings")] [SerializeField] TextMeshProUGUI quiz;

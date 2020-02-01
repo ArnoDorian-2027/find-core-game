@@ -46,13 +46,17 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\C#\Attempt.cs" />
-     <Compile Include="Assets\C#\AudioData.cs" />
      <Compile Include="Assets\C#\AudioManager.cs" />
      <Compile Include="Assets\C#\CadSceneController.cs" />
      <Compile Include="Assets\C#\CamControl.cs" />
      <Compile Include="Assets\C#\CameraController.cs" />
      <Compile Include="Assets\C#\CameraLockAt.cs" />
-     <Compile Include="Assets\C#\DEC_ADD.cs" />
+     <Compile Include="Assets\C#\Data\AnimationDataset.cs" />
+     <Compile Include="Assets\C#\Data\AudioData.cs" />
+     <Compile Include="Assets\C#\Data\DEC_ADD.cs" />
+     <Compile Include="Assets\C#\Data\PersCard.cs" />
+     <Compile Include="Assets\C#\Data\ReplicData.cs" />
+     <Compile Include="Assets\C#\Data\SP_ADD.cs" />
      <Compile Include="Assets\C#\DialogScript.cs" />
      <Compile Include="Assets\C#\DoorController.cs" />
      <Compile Include="Assets\C#\Go.cs" />
@@ -63,12 +67,9 @@
      <Compile Include="Assets\C#\Logic_Input.cs" />
      <Compile Include="Assets\C#\Logic_Operations.cs" />
      <Compile Include="Assets\C#\NameHolder.cs" />
-     <Compile Include="Assets\C#\PersCard.cs" />
      <Compile Include="Assets\C#\PersControls.cs" />
      <Compile Include="Assets\C#\PointsCounter.cs" />
-     <Compile Include="Assets\C#\SP_ADD.cs" />
      <Compile Include="Assets\C#\SceneChanger.cs" />
-     <Compile Include="Assets\C#\StoryMaker.cs" />
      <Compile Include="Assets\C#\SystemsQuiz.cs" />
      <None Include="Assets\Other\Imports\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Other\Imports\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

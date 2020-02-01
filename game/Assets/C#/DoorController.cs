@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class DoorController : MonoBehaviour
 {
-    public bool L = false, R = false, USEFULLY = false;
-    [SerializeField] bool TwiseUsing = false;
-    [SerializeField] private Animator animator;
+    #region init
+    //visible
+        [BoxGroup("Main Settings")] public bool USEFULLY = false;
+        [BoxGroup("Main Settings")] [SerializeField] bool TwiseUsing = false;
+        [BoxGroup("Main Settings")] [SerializeField] private Animator animator;
+    //private
+        [HideInInspector] public bool L = false, R = false;
+    #endregion
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" && USEFULLY == true)
@@ -26,6 +33,4 @@ public class DoorController : MonoBehaviour
             if (!TwiseUsing) { Destroy(this); }
         }
     }
-    
-    
 }

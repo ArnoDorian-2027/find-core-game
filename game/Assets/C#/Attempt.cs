@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 using System.IO;
 using TMPro; 
 
@@ -8,15 +9,15 @@ public class Attempt : MonoBehaviour
 {
     #region Init
         //visible
-        [SerializeField] string Name = "default";
-        [SerializeField] bool This_destroy = false;
-        [Range(1,10)][SerializeField] int Attempts = 3;
-        [SerializeField] bool Graph_out = false;
-        [SerializeField] Graphs graph = null;
-        [SerializeField] bool System_out = false;
-        [SerializeField] SystemsQuiz syst = null;
+            [BoxGroup("Main Settings")] [SerializeField] string Name = "default";
+            [BoxGroup("Main Settings")] [SerializeField] bool ThisDestroy = false;
+            [BoxGroup("Main Settings")] [Range(1,30)][SerializeField] int Attempts = 3;
+            [BoxGroup("Graph Logging Settings")] [SerializeField] bool GraphLog = false;
+            [BoxGroup("Graph Logging Settings")] [ShowIf("GraphLog")] [SerializeField] Graphs graph = null;
+            [BoxGroup("System Logging Settings")] [SerializeField] bool SystemLog = false;
+            [BoxGroup("System Logging Settings")] [ShowIf("SystemLog")] [SerializeField] SystemsQuiz syst = null;
         //private
-        private int i = 0;
+            int i = 0;
     #endregion
     private void Awake() 
     {
@@ -32,7 +33,7 @@ public class Attempt : MonoBehaviour
         i++;
         if (i >= Attempts)
         {
-            if (System_out) 
+            if (SystemLog) 
             {  
                 Animator anim = syst.gameObject.GetComponent<Animator>();
                 anim.SetBool("Open", false);
@@ -44,7 +45,7 @@ public class Attempt : MonoBehaviour
                 write.Close();
                 /*----------DATA*----------*/
             }
-            if (Graph_out) 
+            if (GraphLog) 
             {  
                 Animator anim = syst.gameObject.GetComponent<Animator>();
                 anim.SetBool("Open", false); 
@@ -57,7 +58,7 @@ public class Attempt : MonoBehaviour
                 write.Close();
                 /*----------DATA*----------*/
             }   
-            if (This_destroy) { Destroy(this); }
+            if (ThisDestroy) { Destroy(this); }
         }
     }
 }
